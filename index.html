@@ -85,6 +85,11 @@
         .timer-display { font-size: 26px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #d63031; letter-spacing: 2px; margin: 10px 0; }
         .btn-success { background: linear-gradient(135deg, #00b894, #00cec9); box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3); }
 
+        /* LIVE AUTO STATUS PULSE */
+        .auto-status-pulse { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 184, 148, 0.1); border: 1px solid #00b894; color: #00b894; font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: 20px; margin-top: 10px; }
+        .pulse-dot { width: 8px; height: 8px; background: #00b894; border-radius: 50%; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 184, 148, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); } }
+
         /* PROFILE & MODALS */
         .profile-header { text-align: center; padding-top: 25px; }
         .avatar-container { width: 100px; height: 100px; margin: 0 auto 15px auto; border-radius: 50%; padding: 4px; background: var(--gold-gradient); position: relative; box-shadow: var(--neu-shadow-out); }
@@ -101,13 +106,8 @@
         .copy-btn { display: inline-block; background: var(--surface); box-shadow: var(--neu-shadow-out); color: var(--gold-dark); font-weight: 700; font-size: 11px; padding: 5px 12px; border-radius: 8px; margin-left: 8px; cursor: pointer; transition: 0.2s; }
         .copy-btn:active { box-shadow: var(--neu-shadow-in); }
 
-        /* LANDING PAGE STYLES */
-        .hero-card { text-align: center; padding: 35px 20px; background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--neu-shadow-out); margin-bottom: 25px; }
-        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
-        .feature-box { background: var(--surface); box-shadow: var(--neu-shadow-out); padding: 20px 15px; border-radius: var(--radius-md); text-align: center; }
-        .feature-icon { font-size: 28px; margin-bottom: 8px; display: block; }
-        .feature-title { font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
-        .feature-desc { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+        /* SUCCESS POPUP MODAL */
+        .success-circle { width: 70px; height: 70px; background: linear-gradient(135deg, #00b894, #00cec9); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 20px auto; box-shadow: 0 10px 20px rgba(0, 184, 148, 0.4); color: white; font-size: 36px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -117,48 +117,9 @@
         <!-- GLOBAL LOADER -->
         <div id="loader"><div class="loader-ring"></div><div class="loader-text">STAEXSO LUXURY</div></div>
 
-        <!-- PRE-LOGIN LANDING PAGE -->
-        <div id="screen-landing" class="screen active">
-            <div class="hero-card">
-                <h1 class="text-gradient" style="font-size: 30px; margin-bottom: 10px; font-weight: 800;">STAEXSO SMM</h1>
-                <p style="font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 25px;">#1 Premium Social Media Growth Platform. Boost Your Reach Instantly With Highest Quality Services.</p>
-                <button class="neu-btn" onclick="showAuthScreen()">Get Started / Login</button>
-            </div>
-
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <span class="feature-icon">⚡</span>
-                    <div class="feature-title">Instant Delivery</div>
-                    <div class="feature-desc">Orders start automatically within seconds.</div>
-                </div>
-                <div class="feature-box">
-                    <span class="feature-icon">🛡️</span>
-                    <div class="feature-title">Automated System</div>
-                    <div class="feature-desc">100% Secure & Automated payments & processing.</div>
-                </div>
-                <div class="feature-box">
-                    <span class="feature-icon">💎</span>
-                    <div class="feature-title">Lowest Rates</div>
-                    <div class="feature-desc">High Quality non-drop services at wholesale rates.</div>
-                </div>
-                <div class="feature-box">
-                    <span class="feature-icon">🎧</span>
-                    <div class="feature-title">24/7 Support</div>
-                    <div class="feature-desc">Dedicated WhatsApp support center available.</div>
-                </div>
-            </div>
-
-            <div class="neu-card" style="text-align: center;">
-                <h3 class="text-gradient" style="margin-bottom: 15px; font-size: 18px;">Available Services</h3>
-                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px; font-weight: 500;">Instagram Followers, Likes, Views, Comments & Exclusive Wholesale Packages.</p>
-                <button class="neu-btn" style="background: var(--surface); color: var(--text-main); box-shadow: var(--neu-shadow-out);" onclick="showAuthScreen()">Sign In To Explore Services</button>
-            </div>
-        </div>
-
-        <!-- AUTHENTICATION SCREEN -->
-        <div id="screen-auth" class="screen">
-            <button class="back-btn" onclick="showLandingScreen()"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg> Back to Home</button>
-            <div class="neu-card" style="margin-top: 2vh; padding: 35px 25px;">
+        <!-- AUTHENTICATION SCREEN (DEFAULT BEFORE LOGIN) -->
+        <div id="screen-auth" class="screen active">
+            <div class="neu-card" style="margin-top: 4vh; padding: 35px 25px;">
                 <h1 class="text-gradient" style="text-align: center; margin-bottom: 30px; font-size: 30px;" id="auth-title">LOGIN</h1>
                 
                 <div style="text-align: center; margin-bottom: 25px;">
@@ -238,17 +199,17 @@
                     
                     <div id="add-funds-form">
                         <div class="neu-input-group">
-                            <label>Enter Amount (Min ₹1)</label>
+                            <label>Enter Amount (Min ₹10 - Max ₹2000)</label>
                             <div style="position: relative;">
                                 <span style="position: absolute; left: 18px; top: 15px; font-weight: 700;">₹</span>
-                                <input type="number" class="neu-input" id="wallet-amt" placeholder="10" min="1" style="padding-left: 40px;">
+                                <input type="number" class="neu-input" id="wallet-amt" placeholder="10" min="10" max="2000" style="padding-left: 40px;">
                                 <span style="position: absolute; right: 18px; top: 15px; font-weight: 700; color: var(--text-muted);">INR</span>
                             </div>
                         </div>
                         <button class="neu-btn btn-success" style="margin-top: 10px;" id="btn-generate-qr" onclick="generateDynamicQR()">Generate Payment QR Code</button>
                     </div>
 
-                    <!-- DYNAMIC QR BOX (5-MIN PERSISTENT SESSION) -->
+                    <!-- DYNAMIC QR BOX (AUTOMATIC BG POLLING - NO MANUAL VERIFY CLICK NEEDED) -->
                     <div id="qr-display-box" class="qr-wrapper" style="display: none;">
                         <h3 class="text-gradient" style="font-size: 20px;">Scan & Pay ₹<span id="qr-amt-text">0</span></h3>
                         <p style="font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Use any UPI App (FamPay, PhonePe, Paytm, Google Pay)</p>
@@ -265,10 +226,14 @@
                             </div>
                         </div>
 
-                        <p style="font-size: 12px; font-weight: 700; color: #d63031;">QR Code Expires In:</p>
+                        <div class="auto-status-pulse">
+                            <div class="pulse-dot"></div>
+                            <span>Auto Detecting Payment...</span>
+                        </div>
+
+                        <p style="font-size: 12px; font-weight: 700; color: #d63031; margin-top: 15px;">QR Code Expires In:</p>
                         <div class="timer-display" id="qr-timer">05:00</div>
 
-                        <button class="neu-btn btn-success" id="btn-verify-payment" onclick="verifyAutoPayment()" style="margin-top: 10px;">Verify Payment Now ⚡</button>
                         <button class="neu-btn" style="background: transparent; color: #d63031; box-shadow: none; font-size: 12px; margin-top: 8px; padding: 8px;" onclick="cancelQRSession()">Cancel Payment</button>
                     </div>
 
@@ -314,7 +279,7 @@
                 <div class="nav-item active" id="nav-home" onclick="navTo('home')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>HOME</div>
                 <div class="nav-item" id="nav-offers" onclick="navTo('offers')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42z"/></svg></div>OFFERS</div>
                 <div class="nav-item" id="nav-wallet" onclick="navTo('wallet')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8z"/></svg></div>WALLET</div>
-                <div class="nav-item" id="nav-profile" onclick="navTo('profile')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>PROFILE</div>
+                <div class="nav-item" id="nav-profile" onclick="navTo('profile')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>PROFILE</div>
             </div>
         </div>
 
@@ -335,6 +300,16 @@
             </div>
         </div>
 
+        <!-- GREEN AUTOMATED PAYMENT SUCCESS POPUP MODAL -->
+        <div class="modal-overlay" id="modal-success-payment">
+            <div class="modal-card">
+                <div class="success-circle">✓</div>
+                <h2 style="color: #00b894; margin-bottom: 10px; font-size: 24px;">Payment Successful!</h2>
+                <p id="success-payment-msg" style="font-size: 14px; font-weight: 600; color: var(--text-main); margin-bottom: 25px;">₹0.00 has been added to your wallet balance.</p>
+                <button class="neu-btn btn-success" onclick="closeModal('modal-success-payment')">OK</button>
+            </div>
+        </div>
+
     </div>
 
     <!-- FIREBASE & APPLICATION MODULE -->
@@ -343,7 +318,7 @@
         import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
         import { getDatabase, ref, onValue, set, push, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-        // NEW FIREBASE CONFIGURATION
+        // FIREBASE CONFIGURATION
         const firebaseConfig = {
             apiKey: "AIzaSyBN7JOqk8ZSa6P6SbEoteflkb08m4SiWuA",
             authDomain: "staexso-shop.firebaseapp.com",
@@ -358,9 +333,10 @@
         const auth = getAuth(app);
         const db = getDatabase(app);
 
-        // DEPLOYED GOOGLE APPS SCRIPT WEB APP ENDPOINT URL
+        // GOOGLE APPS SCRIPT WEB APP ENDPOINT URL
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmfBv6lf-qBzEazNmS4sSgZyalqLWj5VP1loDSaHz_g-T93Bu-FaAQ0ODlECxn3gfQ1g/exec"; 
         const FAM_UPI_ID = "ambani14@fam";
+        const WA_SUPPORT_NUM = "919234799016";
 
         let currentUser = null;
         let isSignupMode = false;
@@ -369,6 +345,7 @@
         let activeServiceMin = 0;
         let activeServiceMax = 0;
         let qrTimerInterval = null;
+        let autoPaymentPollInterval = null;
 
         const showLoader = () => {
             const l = document.getElementById('loader');
@@ -383,21 +360,9 @@
             }
         };
 
-        // SAFETY LOADER FALLBACK RESOLVER
         setTimeout(hideLoader, 1200);
 
         window.copyOrderId = (text) => { navigator.clipboard.writeText(text).then(() => alert("Copied: " + text)); };
-
-        // SCREEN NAVIGATION
-        window.showLandingScreen = () => {
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.getElementById('screen-landing').classList.add('active');
-        };
-
-        window.showAuthScreen = () => {
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.getElementById('screen-auth').classList.add('active');
-        };
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -407,7 +372,6 @@
                 let localDp = localStorage.getItem('avatar_' + user.uid);
                 if(localDp) document.getElementById('profile-img').src = localDp;
                 
-                document.getElementById('screen-landing').style.display = 'none';
                 document.getElementById('screen-auth').style.display = 'none';
                 document.getElementById('main-app').style.display = 'block';
                 
@@ -417,7 +381,7 @@
             } else {
                 currentUser = null;
                 document.getElementById('main-app').style.display = 'none';
-                showLandingScreen();
+                document.getElementById('screen-auth').style.display = 'block';
             }
             hideLoader();
         });
@@ -684,7 +648,7 @@
         }
 
         // ====================================================
-        // AUTOMATED FAM-PAY DYNAMIC QR PAYMENT SYSTEM
+        // AUTOMATED FAM-PAY DYNAMIC QR PAYMENT (AUTOMATIC BACKGROUND POLLING)
         // ====================================================
         function generateRandomNoteCode() {
             const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -697,9 +661,13 @@
 
         window.generateDynamicQR = () => {
             const amtInput = document.getElementById('wallet-amt').value;
-            if(!amtInput || amtInput < 1) return alert("Please enter a valid amount (Minimum ₹1)");
+            const amtVal = parseFloat(amtInput);
 
-            const amount = parseFloat(amtInput).toFixed(2);
+            if(!amtInput || isNaN(amtVal) || amtVal < 10 || amtVal > 2000) {
+                return alert("Please enter a valid deposit amount between ₹10 and ₹2000.");
+            }
+
+            const amount = amtVal.toFixed(2);
             const noteCode = generateRandomNoteCode();
             const expiresAt = Date.now() + (5 * 60 * 1000); // 5 Minutes Timestamp
 
@@ -727,6 +695,7 @@
             document.getElementById('qr-image').src = qrApiUrl;
 
             startQRCountdown(session.expiresAt);
+            startAutoPaymentPolling(session);
         }
 
         function startQRCountdown(expiresAt) {
@@ -738,6 +707,7 @@
 
                 if (diff <= 0) {
                     clearInterval(qrTimerInterval);
+                    if(autoPaymentPollInterval) clearInterval(autoPaymentPollInterval);
                     document.getElementById('qr-timer').innerText = "00:00 - EXPIRED";
                     alert("QR Code has expired! Please generate a new QR code.");
                     cancelQRSession();
@@ -747,6 +717,52 @@
                     document.getElementById('qr-timer').innerText = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
                 }
             }, 1000);
+        }
+
+        // AUTOMATIC BACKGROUND POLLING ENGINE (EVERY 5 SECONDS)
+        function startAutoPaymentPolling(session) {
+            if(autoPaymentPollInterval) clearInterval(autoPaymentPollInterval);
+
+            autoPaymentPollInterval = setInterval(async () => {
+                if(!currentUser) return;
+                
+                try {
+                    const payload = {
+                        action: 'verify_payment',
+                        noteCode: session.noteCode,
+                        amount: session.amount,
+                        uid: currentUser.uid,
+                        email: currentUser.email
+                    };
+
+                    let response = await fetch(SCRIPT_URL, {
+                        method: 'POST', redirect: 'follow',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    let resultText = await response.text();
+                    try {
+                        let result = JSON.parse(resultText);
+                        if(result.success) {
+                            // STOP POLLING & TIMER
+                            if(autoPaymentPollInterval) clearInterval(autoPaymentPollInterval);
+                            if(qrTimerInterval) clearInterval(qrTimerInterval);
+                            
+                            localStorage.removeItem('active_qr_session_' + currentUser.uid);
+                            
+                            document.getElementById('qr-display-box').style.display = 'none';
+                            document.getElementById('add-funds-form').style.display = 'block';
+                            document.getElementById('wallet-amt').value = '';
+
+                            // SHOW LUXURY GREEN SUCCESS POPUP MODAL
+                            document.getElementById('success-payment-msg').innerText = `₹${session.amount} has been added to your wallet balance.`;
+                            document.getElementById('modal-success-payment').style.display = 'flex';
+                        }
+                    } catch(e) {}
+                } catch(e) {}
+
+            }, 5000);
         }
 
         function checkActiveQRSession() {
@@ -771,58 +787,11 @@
 
         window.cancelQRSession = () => {
             if(qrTimerInterval) clearInterval(qrTimerInterval);
+            if(autoPaymentPollInterval) clearInterval(autoPaymentPollInterval);
             if(currentUser) localStorage.removeItem('active_qr_session_' + currentUser.uid);
             document.getElementById('qr-display-box').style.display = 'none';
             document.getElementById('add-funds-form').style.display = 'block';
             document.getElementById('wallet-amt').value = '';
-        };
-
-        window.verifyAutoPayment = async () => {
-            if(!currentUser) return;
-            const saved = localStorage.getItem('active_qr_session_' + currentUser.uid);
-            if(!saved) return alert("No active payment QR session found. Please generate a new QR code.");
-
-            const session = JSON.parse(saved);
-            const btn = document.getElementById('btn-verify-payment');
-            btn.disabled = true;
-            btn.innerText = "Checking Payment Status... ⏳";
-
-            try {
-                const payload = {
-                    action: 'verify_payment',
-                    noteCode: session.noteCode,
-                    amount: session.amount,
-                    uid: currentUser.uid,
-                    email: currentUser.email
-                };
-
-                let response = await fetch(SCRIPT_URL, {
-                    method: 'POST', redirect: 'follow',
-                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-                    body: JSON.stringify(payload)
-                });
-
-                let resultText = await response.text();
-                btn.disabled = false;
-                btn.innerText = "Verify Payment Now ⚡";
-
-                try {
-                    let result = JSON.parse(resultText);
-                    if(result.success) {
-                        alert(`🎉 Payment Verified Successfully! ₹${session.amount} has been added to your wallet.`);
-                        cancelQRSession();
-                    } else {
-                        alert(result.message || "Payment notification not found in Gmail yet. Please complete the payment and try again in a few seconds.");
-                    }
-                } catch(e) {
-                    alert("Bridge API Error: Could not parse response from server.");
-                }
-
-            } catch(e) {
-                btn.disabled = false;
-                btn.innerText = "Verify Payment Now ⚡";
-                alert("Verification Network Error: " + e.message);
-            }
         };
 
         // PROFILE & HELPERS
@@ -840,13 +809,10 @@
         };
 
         window.openWhatsAppHelp = () => {
-            get(ref(db, 'admin/whatsapp')).then(snap => {
-                let waNum = snap.exists() ? snap.val().trim() : "918095858881";
-                let userEmail = currentUser ? currentUser.email : "Unknown Email";
-                let message = `Hello Admin, I need help regarding my SMM account. Registered email: ${userEmail}`;
-                let waUrl = `https://wa.me/${waNum}?text=${encodeURIComponent(message)}`;
-                window.open(waUrl, "_blank");
-            });
+            let userEmail = currentUser ? currentUser.email : "Unknown Email";
+            let message = `Hello Admin, I need help regarding my SMM account. Registered email: ${userEmail}`;
+            let waUrl = `https://wa.me/${WA_SUPPORT_NUM}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, "_blank");
         };
 
         function extractYouTubeID(url) {

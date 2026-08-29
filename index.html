@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Staexso Luxury SMM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* BLOGGER / EMBED NAVBAR REMOVER */
+        #navbar-iframe, .navbar, .Navbar, #navbar { display: none !important; height: 0 !important; visibility: hidden !important; }
+        body { padding-top: 0px !important; margin-top: 0px !important; }
+
+        /* ULTRA PREMIUM NEUMORPHIC VARIABLES */
+        :root {
+            --bg-color: #EAE6DF; 
+            --surface: #EAE6DF;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --gold-light: #f6e58d;
+            --gold-main: #e6a822;
+            --gold-dark: #d35400;
+            --gold-gradient: linear-gradient(135deg, #f1c40f, #e67e22, #d35400);
+            --neu-shadow-out: 8px 8px 16px #c7c3bd, -8px -8px 16px #ffffff;
+            --neu-shadow-in: inset 6px 6px 12px #c7c3bd, inset -6px -6px 12px #ffffff;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
+        body { background-color: var(--bg-color); color: var(--text-main); overflow-x: hidden; min-height: 100vh; padding-bottom: 95px; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+        /* MOBILE MAX WIDTH CONTAINER */
+        .app-wrapper { max-width: 480px; margin: 0 auto; min-height: 100vh; position: relative; }
+
+        /* LOADER SCREEN */
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 100000; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.4s ease; }
+        .loader-ring { width: 60px; height: 60px; border-radius: 50%; box-shadow: var(--neu-shadow-out); border: 4px solid transparent; border-top-color: var(--gold-main); animation: spin 1.2s linear infinite; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .loader-text { margin-top: 20px; font-weight: 700; color: var(--gold-dark); letter-spacing: 2px; font-size: 14px; }
+
+        /* REUSABLE NEUMORPHIC COMPONENTS */
+        .neu-card { background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--neu-shadow-out); padding: 25px; margin-bottom: 25px; }
+        .neu-btn { width: 100%; background: var(--gold-gradient); color: #fff; border: none; padding: 16px; border-radius: var(--radius-md); font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3); cursor: pointer; transition: all 0.2s ease; }
+        .neu-btn:active { transform: scale(0.96); box-shadow: 0 5px 10px rgba(230, 126, 34, 0.2); }
+        .neu-btn:disabled { background: #ccc !important; box-shadow: none !important; color: #888 !important; cursor: not-allowed; }
+        .neu-input-group { margin-bottom: 20px; text-align: left; }
+        .neu-input-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; margin-left: 5px; }
+        .neu-input { width: 100%; background: var(--surface); border: none; padding: 16px; border-radius: var(--radius-md); box-shadow: var(--neu-shadow-in); font-size: 14px; color: var(--text-main); font-weight: 500; outline: none; }
+        .neu-input:focus { box-shadow: inset 8px 8px 16px #c7c3bd, inset -8px -8px 16px #ffffff, 0 0 0 2px var(--gold-main); }
+        .text-gradient { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .screen { display: none; animation: fadeUp 0.4s ease forwards; padding: 20px; }
+        .screen.active { display: block; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* BOTTOM NAVIGATION */
+        .bottom-nav { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 480px; background: var(--surface); border-radius: 30px 30px 0 0; box-shadow: 0 -10px 30px rgba(0,0,0,0.08); display: flex; justify-content: space-around; padding: 12px 10px; z-index: 9000; }
+        .nav-item { text-align: center; color: var(--text-muted); cursor: pointer; font-size: 11px; font-weight: 600; flex: 1; transition: 0.3s; display: flex; flex-direction: column; align-items: center; }
+        .nav-icon { width: 42px; height: 42px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: 4px; background: var(--surface); box-shadow: var(--neu-shadow-out); transition: 0.3s; }
+        .nav-item svg { width: 20px; height: 20px; fill: currentColor; }
+        .nav-item.active { color: var(--gold-dark); }
+        .nav-item.active .nav-icon { box-shadow: var(--neu-shadow-in); color: var(--gold-dark); }
+
+        /* UI SPECIFIC CARDS */
+        .balance-board { text-align: center; position: relative; }
+        .balance-board::after { content: '⚖️'; position: absolute; right: 20px; top: 20px; font-size: 24px; opacity: 0.5; }
+        .insta-banner { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-radius: var(--radius-lg); padding: 22px; text-align: center; color: white; font-weight: 800; font-size: 17px; letter-spacing: 1px; box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3); margin-bottom: 22px; position: relative; }
+        .category-box { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--neu-shadow-out); margin-bottom: 15px; cursor: pointer; transition: all 0.2s ease; border: 2px solid transparent; }
+        .category-box:active { box-shadow: var(--neu-shadow-in); }
+        .category-left { display: flex; align-items: center; font-weight: 600; font-size: 15px; }
+        .category-icon { width: 35px; height: 35px; background: var(--surface); box-shadow: var(--neu-shadow-out); border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-right: 15px; font-size: 16px; }
+        .check-box { width: 24px; height: 24px; border-radius: 6px; box-shadow: var(--neu-shadow-in); display: flex; justify-content: center; align-items: center; }
+        .category-box.selected { border-color: var(--gold-main); }
+        .category-box.selected .check-box { background: var(--gold-main); box-shadow: none; }
+        .category-box.selected .check-box::after { content: '✔'; color: white; font-weight: bold; font-size: 14px; }
+        .back-btn { display: inline-flex; align-items: center; color: var(--gold-dark); font-weight: 700; margin-bottom: 20px; cursor: pointer; background: none; border: none; font-size: 14px; }
+        .back-btn svg { width: 18px; height: 18px; fill: currentColor; margin-right: 8px; }
+        .price-display-box { background: var(--surface); box-shadow: var(--neu-shadow-in); border-radius: var(--radius-md); padding: 15px; text-align: center; margin-bottom: 20px; }
+
+        /* WALLET & AUTOMATED DYNAMIC QR */
+        .history-btn-group { display: flex; gap: 15px; margin-bottom: 25px; }
+        .qr-wrapper { background: var(--surface); box-shadow: var(--neu-shadow-in); border-radius: var(--radius-lg); padding: 25px 20px; text-align: center; margin-top: 25px; }
+        .qr-img-box { width: 190px; height: 190px; margin: 15px auto; padding: 10px; background: white; border-radius: 16px; box-shadow: var(--neu-shadow-out); }
+        .qr-img-box img { width: 100%; height: 100%; object-fit: contain; }
+        .timer-display { font-size: 26px; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #d63031; letter-spacing: 2px; margin: 10px 0; }
+        .btn-success { background: linear-gradient(135deg, #00b894, #00cec9); box-shadow: 0 10px 20px rgba(0, 184, 148, 0.3); }
+
+        /* PROFILE & MODALS */
+        .profile-header { text-align: center; padding-top: 25px; }
+        .avatar-container { width: 100px; height: 100px; margin: 0 auto 15px auto; border-radius: 50%; padding: 4px; background: var(--gold-gradient); position: relative; box-shadow: var(--neu-shadow-out); }
+        .avatar-container img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--surface); }
+        .edit-badge { position: absolute; bottom: 0; right: 0; width: 32px; height: 32px; background: var(--surface); border-radius: 50%; box-shadow: var(--neu-shadow-out); display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .menu-list { margin-top: 25px; }
+        .menu-item { display: flex; justify-content: space-between; padding: 18px 20px; background: var(--surface); box-shadow: var(--neu-shadow-out); border-radius: var(--radius-md); margin-bottom: 15px; font-weight: 600; cursor: pointer; }
+        .menu-item:active { box-shadow: var(--neu-shadow-in); }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 10000; display: none; justify-content: center; align-items: center; }
+        .modal-card { background: var(--surface); width: 90%; max-width: 400px; border-radius: var(--radius-lg); padding: 30px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; }
+        .modal-close-btn { position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background: #ff4757; color: white; border-radius: 50%; font-size: 24px; font-weight: bold; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4); border: 3px solid white; }
+        .empty-state { text-align: center; color: var(--text-muted); font-size: 14px; padding: 30px; font-weight: 500; }
+        .history-card { text-align: left; padding: 18px; margin-bottom: 18px; background: var(--surface); box-shadow: var(--neu-shadow-in); border-radius: var(--radius-md); position: relative;}
+        .copy-btn { display: inline-block; background: var(--surface); box-shadow: var(--neu-shadow-out); color: var(--gold-dark); font-weight: 700; font-size: 11px; padding: 5px 12px; border-radius: 8px; margin-left: 8px; cursor: pointer; transition: 0.2s; }
+        .copy-btn:active { box-shadow: var(--neu-shadow-in); }
+
+        /* LANDING PAGE STYLES */
+        .hero-card { text-align: center; padding: 35px 20px; background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--neu-shadow-out); margin-bottom: 25px; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .feature-box { background: var(--surface); box-shadow: var(--neu-shadow-out); padding: 20px 15px; border-radius: var(--radius-md); text-align: center; }
+        .feature-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+        .feature-title { font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; }
+        .feature-desc { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+    </style>
+</head>
+<body>
+
+    <div class="app-wrapper">
+
+        <!-- GLOBAL LOADER -->
+        <div id="loader"><div class="loader-ring"></div><div class="loader-text">STAEXSO LUXURY</div></div>
+
+        <!-- PRE-LOGIN LANDING PAGE -->
+        <div id="screen-landing" class="screen active">
+            <div class="hero-card">
+                <h1 class="text-gradient" style="font-size: 30px; margin-bottom: 10px; font-weight: 800;">STAEXSO SMM</h1>
+                <p style="font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 25px;">#1 Premium Social Media Growth Platform. Boost Your Reach Instantly With Highest Quality Services.</p>
+                <button class="neu-btn" onclick="showAuthScreen()">Get Started / Login</button>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <span class="feature-icon">⚡</span>
+                    <div class="feature-title">Instant Delivery</div>
+                    <div class="feature-desc">Orders start automatically within seconds.</div>
+                </div>
+                <div class="feature-box">
+                    <span class="feature-icon">🛡️</span>
+                    <div class="feature-title">Automated System</div>
+                    <div class="feature-desc">100% Secure & Automated payments & processing.</div>
+                </div>
+                <div class="feature-box">
+                    <span class="feature-icon">💎</span>
+                    <div class="feature-title">Lowest Rates</div>
+                    <div class="feature-desc">High Quality non-drop services at wholesale rates.</div>
+                </div>
+                <div class="feature-box">
+                    <span class="feature-icon">🎧</span>
+                    <div class="feature-title">24/7 Support</div>
+                    <div class="feature-desc">Dedicated WhatsApp support center available.</div>
+                </div>
+            </div>
+
+            <div class="neu-card" style="text-align: center;">
+                <h3 class="text-gradient" style="margin-bottom: 15px; font-size: 18px;">Available Services</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px; font-weight: 500;">Instagram Followers, Likes, Views, Comments & Exclusive Wholesale Packages.</p>
+                <button class="neu-btn" style="background: var(--surface); color: var(--text-main); box-shadow: var(--neu-shadow-out);" onclick="showAuthScreen()">Sign In To Explore Services</button>
+            </div>
+        </div>
+
+        <!-- AUTHENTICATION SCREEN -->
+        <div id="screen-auth" class="screen">
+            <button class="back-btn" onclick="showLandingScreen()"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg> Back to Home</button>
+            <div class="neu-card" style="margin-top: 2vh; padding: 35px 25px;">
+                <h1 class="text-gradient" style="text-align: center; margin-bottom: 30px; font-size: 30px;" id="auth-title">LOGIN</h1>
+                
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <button type="button" style="width: 100%; background: #ffffff; color: #757575; font-family: Roboto, 'Segoe UI', sans-serif; font-size: 15px; font-weight: 500; border: 1px solid #dadce0; border-radius: 8px; padding: 12px; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" onclick="handleGoogleAuth()">
+                        <svg viewBox="0 0 24 24" width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Sign in with Google
+                    </button>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 25px; display: flex; align-items: center; justify-content: center;">
+                    <div style="flex: 1; height: 1px; background: #d1ccc5;"></div>
+                    <span style="font-size: 12px; font-weight: 600; color: var(--text-muted); margin: 0 10px;">OR EMAIL</span>
+                    <div style="flex: 1; height: 1px; background: #d1ccc5;"></div>
+                </div>
+
+                <div id="signup-fields" style="display: none;"><div class="neu-input-group"><label>Full Name</label><input type="text" class="neu-input" id="auth-name" placeholder="Enter your name"></div></div>
+                <div class="neu-input-group"><label>Email Address</label><input type="email" class="neu-input" id="auth-email" placeholder="example@mail.com"></div>
+                <div class="neu-input-group"><label>Password</label><input type="password" class="neu-input" id="auth-pass" placeholder="Enter password"></div>
+                <div id="signup-fields-2" style="display: none;"><div class="neu-input-group"><label>Confirm Password</label><input type="password" class="neu-input" id="auth-pass-conf" placeholder="Re-enter password"></div></div>
+                <button class="neu-btn" style="margin-top: 10px;" onclick="handleAuth()" id="auth-btn-txt">Sign In</button>
+                <p style="text-align: center; margin-top: 25px; font-size: 13px; font-weight: 500;"><span id="auth-switch-msg">Don't have an account? Create one</span><br><span class="text-gradient" style="font-size: 15px; font-weight: 800; cursor: pointer; display: inline-block; margin-top: 8px;" onclick="toggleAuth()">Create Account</span></p>
+            </div>
+        </div>
+
+        <!-- MAIN APP CONTAINER -->
+        <div id="main-app" style="display: none;">
+            
+            <!-- HOME SCREEN -->
+            <div id="screen-home" class="screen">
+                <div class="neu-card balance-board">
+                    <h4 style="color: var(--text-muted); font-size: 14px; margin-bottom: 5px;">Current Balance</h4>
+                    <h1 class="text-gradient" style="font-size: 42px;">₹ <span id="home-balance">0.00</span></h1>
+                </div>
+                <div class="insta-banner"><span style="font-size: 28px; display: block; margin-bottom: 5px;">📸</span>INSTAGRAM PANEL</div>
+                <div id="category-selector">
+                    <div class="category-box" onclick="selectCategory('Followers', '101', this)"><div class="category-left"><div class="category-icon">👥</div> FOLLOWERS</div><div class="check-box"></div></div>
+                    <div class="category-box" onclick="selectCategory('Likes', '102', this)"><div class="category-left"><div class="category-icon">❤️</div> LIKES</div><div class="check-box"></div></div>
+                    <div class="category-box" onclick="selectCategory('Views', '103', this)"><div class="category-left"><div class="category-icon">👁️</div> VIEWS</div><div class="check-box"></div></div>
+                    <div class="category-box" onclick="selectCategory('Comments', '104', this)"><div class="category-left"><div class="category-icon">💬</div> COMMENTS</div><div class="check-box"></div></div>
+                </div>
+                <div id="order-panel" style="display: none;">
+                    <button class="back-btn" onclick="backToCategories()"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg> Back to Categories</button>
+                    <div class="neu-card">
+                        <h2 class="text-gradient" id="order-cat-name" style="text-align: center; margin-bottom: 15px;">Category</h2>
+                        <div class="price-display-box" id="service-price-info"><span style="font-size: 13px; color: var(--text-muted);">Fetching details...</span></div>
+                        <div class="neu-input-group"><label>Target Link (Profile/Post/Reel)</label><input type="url" class="neu-input" id="order-link" placeholder="Paste link here"></div>
+                        <div class="neu-input-group"><label>Quantity</label><input type="number" class="neu-input" id="order-qty" placeholder="Enter quantity" oninput="calcOrderPrice()"></div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin: 25px 0; padding: 0 10px;">
+                            <span style="font-weight: 700; color: var(--text-muted);">Total Charge:</span>
+                            <h2 class="text-gradient">₹ <span id="order-total-cost">0.00</span></h2>
+                        </div>
+                        <button class="neu-btn" id="btn-place-order" onclick="openConfirmModal('order')">Place Order</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OFFERS SCREEN -->
+            <div id="screen-offers" class="screen">
+                <h3 style="text-align: center; margin-bottom: 25px; color: var(--text-muted); font-weight: 700; letter-spacing: 1px;">⭐ EXCLUSIVE OFFERS</h3>
+                <div id="offers-list"><div class="empty-state">No offers have been added by the admin yet.</div></div>
+            </div>
+
+            <!-- WALLET & AUTOMATED DYNAMIC QR PAYMENT SCREEN -->
+            <div id="screen-wallet" class="screen">
+                <div class="neu-card" style="text-align: center; padding: 30px 20px;">
+                    <h4 style="color: var(--text-muted); font-size: 13px; margin-bottom: 5px;">TOTAL BALANCE ⚖️</h4>
+                    <h1 style="font-size: 46px; color: var(--text-main);">₹ <span id="wallet-pg-balance">0.00</span></h1>
+                </div>
+                
+                <div class="history-btn-group">
+                    <button class="neu-btn" style="background: var(--surface); color: var(--text-main); box-shadow: var(--neu-shadow-out);" onclick="openVideoModal('payment')">How to Pay ⓘ</button>
+                    <button class="neu-btn" style="background: #2d3436; box-shadow: none;" onclick="navTo('history')">History 🕒</button>
+                </div>
+                
+                <div class="neu-card">
+                    <h3 style="text-align: center; margin-bottom: 15px; color: var(--text-main);">Add Funds (Auto Payment)</h3>
+                    
+                    <div id="add-funds-form">
+                        <div class="neu-input-group">
+                            <label>Enter Amount (Min ₹1)</label>
+                            <div style="position: relative;">
+                                <span style="position: absolute; left: 18px; top: 15px; font-weight: 700;">₹</span>
+                                <input type="number" class="neu-input" id="wallet-amt" placeholder="10" min="1" style="padding-left: 40px;">
+                                <span style="position: absolute; right: 18px; top: 15px; font-weight: 700; color: var(--text-muted);">INR</span>
+                            </div>
+                        </div>
+                        <button class="neu-btn btn-success" style="margin-top: 10px;" id="btn-generate-qr" onclick="generateDynamicQR()">Generate Payment QR Code</button>
+                    </div>
+
+                    <!-- DYNAMIC QR BOX (5-MIN PERSISTENT SESSION) -->
+                    <div id="qr-display-box" class="qr-wrapper" style="display: none;">
+                        <h3 class="text-gradient" style="font-size: 20px;">Scan & Pay ₹<span id="qr-amt-text">0</span></h3>
+                        <p style="font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Use any UPI App (FamPay, PhonePe, Paytm, Google Pay)</p>
+                        
+                        <div class="qr-img-box">
+                            <img id="qr-image" src="" alt="UPI QR Code">
+                        </div>
+
+                        <div style="background: var(--surface); box-shadow: var(--neu-shadow-in); padding: 12px; border-radius: 12px; margin: 15px 0;">
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 4px;">Auto UPI Note Code (Do Not Remove)</span>
+                            <div style="display: flex; align-items: center; justify-content: center;">
+                                <span id="qr-note-code" style="font-weight: 800; font-size: 15px; color: var(--gold-dark); letter-spacing: 1px;">-</span>
+                                <span class="copy-btn" onclick="copyNoteCode()">📋 Copy</span>
+                            </div>
+                        </div>
+
+                        <p style="font-size: 12px; font-weight: 700; color: #d63031;">QR Code Expires In:</p>
+                        <div class="timer-display" id="qr-timer">05:00</div>
+
+                        <button class="neu-btn btn-success" id="btn-verify-payment" onclick="verifyAutoPayment()" style="margin-top: 10px;">Verify Payment Now ⚡</button>
+                        <button class="neu-btn" style="background: transparent; color: #d63031; box-shadow: none; font-size: 12px; margin-top: 8px; padding: 8px;" onclick="cancelQRSession()">Cancel Payment</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PROFILE SCREEN -->
+            <div id="screen-profile" class="screen">
+                <div class="profile-header neu-card">
+                    <div class="avatar-container">
+                        <img id="profile-img" src="https://i.ibb.co/6Hk3h94/default-avatar.png">
+                        <div class="edit-badge" onclick="document.getElementById('avatar-upload').click()">✎</div>
+                    </div>
+                    <input type="file" id="avatar-upload" style="display: none;" accept="image/*" onchange="uploadAvatarLocal(event)">
+                    <h2 id="profile-name" style="margin-bottom: 5px;">User</h2>
+                    <p id="profile-email" style="font-size: 13px; color: var(--text-muted); font-weight: 500;">user@email.com</p>
+                </div>
+                <div class="menu-list">
+                    <div class="menu-item" onclick="navTo('orders')"><span>🛒 My Orders</span><span style="color: #b2bec3;">❯</span></div>
+                    <div class="menu-item" onclick="openWhatsAppHelp()"><span>❓ Help Center</span><span style="color: #b2bec3;">❯</span></div>
+                    <div class="menu-item" onclick="openVideoModal('tutorial')"><span>📺 How-to Tutorials</span><span style="color: #b2bec3;">❯</span></div>
+                    <div class="menu-item" onclick="logoutApp()" style="color: #d63031;"><span>🚪 Log Out</span><span style="color: #b2bec3;">❯</span></div>
+                </div>
+            </div>
+
+            <!-- TRANSACTION HISTORY SCREEN -->
+            <div id="screen-history" class="screen">
+                <button class="back-btn" onclick="navTo('wallet')"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg> Back to Wallet</button>
+                <h2 style="margin-bottom: 20px; font-size: 20px;">Deposit History</h2>
+                <div id="history-container"><div class="empty-state">No transaction history.</div></div>
+            </div>
+
+            <!-- MY ORDERS SCREEN -->
+            <div id="screen-orders" class="screen">
+                <button class="back-btn" onclick="navTo('profile')"><svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg> Back to Profile</button>
+                <h2 style="margin-bottom: 20px; font-size: 20px;">My Orders</h2>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 15px; font-weight: 600;">If you face any issues, copy your Order ID and send it to Support.</p>
+                <div id="orders-container"><div class="empty-state">No orders placed yet.</div></div>
+            </div>
+
+            <!-- BOTTOM NAVIGATION BAR -->
+            <div class="bottom-nav">
+                <div class="nav-item active" id="nav-home" onclick="navTo('home')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>HOME</div>
+                <div class="nav-item" id="nav-offers" onclick="navTo('offers')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42z"/></svg></div>OFFERS</div>
+                <div class="nav-item" id="nav-wallet" onclick="navTo('wallet')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8z"/></svg></div>WALLET</div>
+                <div class="nav-item" id="nav-profile" onclick="navTo('profile')"><div class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>PROFILE</div>
+            </div>
+        </div>
+
+        <!-- MODAL POPUPS -->
+        <div class="modal-overlay" id="modal-confirm">
+            <div class="modal-card">
+                <div class="modal-close-btn" onclick="closeModal('modal-confirm')">&times;</div>
+                <h2 class="text-gradient" style="margin-bottom: 15px;">Confirm Order</h2>
+                <p id="confirm-msg" style="font-size: 14px; font-weight: 500; color: var(--text-muted); margin-bottom: 25px;"></p>
+                <button class="neu-btn" id="btn-confirm-action">Confirm & Pay</button>
+            </div>
+        </div>
+
+        <div class="modal-overlay" id="modal-video">
+            <div class="modal-card" style="padding: 15px; width: 95%; max-width: 600px;">
+                <div class="modal-close-btn" style="top: -15px; right: -10px;" onclick="closeModal('modal-video')">&times;</div>
+                <div id="video-content" style="border-radius: var(--radius-md); overflow: hidden; min-height: 200px; display: flex; align-items: center; justify-content: center; background: var(--surface); box-shadow: var(--neu-shadow-in);"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FIREBASE & APPLICATION MODULE -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, signOut, updateProfile, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getDatabase, ref, onValue, set, push, get } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        // NEW FIREBASE CONFIGURATION
+        const firebaseConfig = {
+            apiKey: "AIzaSyBN7JOqk8ZSa6P6SbEoteflkb08m4SiWuA",
+            authDomain: "staexso-shop.firebaseapp.com",
+            databaseURL: "https://staexso-shop-default-rtdb.firebaseio.com",
+            projectId: "staexso-shop",
+            storageBucket: "staexso-shop.firebasestorage.app",
+            messagingSenderId: "991606484598",
+            appId: "1:991606484598:web:99197bb37c1a6ab9dd3957",
+            measurementId: "G-R9MK9066T6"
+        };
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getDatabase(app);
+
+        // DEPLOYED GOOGLE APPS SCRIPT WEB APP ENDPOINT URL
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwmfBv6lf-qBzEazNmS4sSgZyalqLWj5VP1loDSaHz_g-T93Bu-FaAQ0ODlECxn3gfQ1g/exec"; 
+        const FAM_UPI_ID = "ambani14@fam";
+
+        let currentUser = null;
+        let isSignupMode = false;
+        let activeServiceId = null;
+        let activeServiceRate = null;
+        let activeServiceMin = 0;
+        let activeServiceMax = 0;
+        let qrTimerInterval = null;
+
+        const showLoader = () => {
+            const l = document.getElementById('loader');
+            if(l) { l.style.display = 'flex'; l.style.opacity = '1'; }
+        };
+
+        const hideLoader = () => {
+            const l = document.getElementById('loader');
+            if(l) {
+                l.style.opacity = '0';
+                setTimeout(() => { l.style.display = 'none'; }, 300);
+            }
+        };
+
+        // SAFETY LOADER FALLBACK RESOLVER
+        setTimeout(hideLoader, 1200);
+
+        window.copyOrderId = (text) => { navigator.clipboard.writeText(text).then(() => alert("Copied: " + text)); };
+
+        // SCREEN NAVIGATION
+        window.showLandingScreen = () => {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen-landing').classList.add('active');
+        };
+
+        window.showAuthScreen = () => {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen-auth').classList.add('active');
+        };
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                currentUser = user;
+                document.getElementById('profile-name').innerText = user.displayName || "User";
+                document.getElementById('profile-email').innerText = user.email;
+                let localDp = localStorage.getItem('avatar_' + user.uid);
+                if(localDp) document.getElementById('profile-img').src = localDp;
+                
+                document.getElementById('screen-landing').style.display = 'none';
+                document.getElementById('screen-auth').style.display = 'none';
+                document.getElementById('main-app').style.display = 'block';
+                
+                initDatabaseListeners(user.uid);
+                checkActiveQRSession();
+                navTo('home');
+            } else {
+                currentUser = null;
+                document.getElementById('main-app').style.display = 'none';
+                showLandingScreen();
+            }
+            hideLoader();
+        });
+
+        window.toggleAuth = () => {
+            isSignupMode = !isSignupMode;
+            document.getElementById('auth-title').innerText = isSignupMode ? "CREATE ACCOUNT" : "LOGIN";
+            document.getElementById('auth-btn-txt').innerText = isSignupMode ? "Sign Up Now" : "Sign In";
+            document.getElementById('auth-switch-msg').innerText = isSignupMode ? "Already have an account?" : "Don't have an account? Create one";
+            document.getElementById('signup-fields').style.display = isSignupMode ? "block" : "none";
+            document.getElementById('signup-fields-2').style.display = isSignupMode ? "block" : "none";
+        };
+
+        window.handleAuth = () => {
+            const email = document.getElementById('auth-email').value;
+            const pass = document.getElementById('auth-pass').value;
+            if(!email || !pass) return alert("Please fill all details.");
+            showLoader();
+            if(isSignupMode) {
+                const name = document.getElementById('auth-name').value;
+                const passConf = document.getElementById('auth-pass-conf').value;
+                if(pass !== passConf) { alert("Passwords do not match!"); hideLoader(); return; }
+                
+                createUserWithEmailAndPassword(auth, email, pass).then(cred => {
+                    updateProfile(cred.user, { displayName: name });
+                    set(ref(db, 'users/' + cred.user.uid), { walletBalance: 0, email: email, displayName: name });
+                }).catch(err => { alert(err.message); hideLoader(); });
+            } else {
+                signInWithEmailAndPassword(auth, email, pass).catch(err => { alert(err.message); hideLoader(); });
+            }
+        };
+
+        window.handleGoogleAuth = () => {
+            showLoader();
+            const provider = new GoogleAuthProvider();
+            signInWithPopup(auth, provider).then((result) => {
+                const user = result.user;
+                get(ref(db, 'users/' + user.uid)).then((snap) => {
+                    if(!snap.exists()) {
+                        set(ref(db, 'users/' + user.uid), {
+                            walletBalance: 0,
+                            email: user.email,
+                            displayName: user.displayName || "Google User"
+                        });
+                    }
+                }).catch(err => {
+                    hideLoader();
+                    console.error("DB check failed:", err);
+                });
+            }).catch((error) => {
+                hideLoader();
+                alert(error.message);
+            });
+        };
+
+        window.logoutApp = () => signOut(auth);
+
+        window.navTo = (tabId) => {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            document.getElementById('screen-' + tabId).classList.add('active');
+            let navItem = document.getElementById('nav-' + tabId);
+            if(navItem) navItem.classList.add('active');
+        };
+
+        window.closeModal = (id) => { 
+            document.getElementById(id).style.display = 'none';
+            if(id === 'modal-video') document.getElementById('video-content').innerHTML = ""; 
+        };
+
+        // DATABASE LISTENERS
+        function initDatabaseListeners(uid) {
+            onValue(ref(db, 'users/' + uid + '/walletBalance'), (snap) => {
+                let balance = parseFloat(snap.val() || 0).toFixed(2);
+                document.getElementById('home-balance').innerText = balance;
+                document.getElementById('wallet-pg-balance').innerText = balance;
+            });
+
+            onValue(ref(db, 'offers'), (snap) => {
+                let container = document.getElementById('offers-list');
+                if(!snap.exists() || snap.val() === null) {
+                    container.innerHTML = `<div class="empty-state">No offers have been added by the admin yet.</div>`;
+                } else {
+                    let htmlStr = '';
+                    snap.forEach(child => {
+                        let data = child.val();
+                        let pointsHtml = data.points ? data.points.split(',').map(p => `<p style="margin-bottom:8px;">• ${p.trim()}</p>`).join('') : '';
+                        
+                        htmlStr += `<div class="neu-card" style="text-align: center;">
+                            <h2 class="text-gradient" style="font-size:24px; margin-bottom:15px;">${data.title}</h2>
+                            <h1 style="font-size:42px; margin-bottom:20px; color:var(--text-main);">₹ ${data.price}</h1>
+                            <div style="text-align:left; font-size:14px; font-weight:500; color:var(--text-muted); margin-bottom:25px; padding: 0 10px;">${pointsHtml}</div>
+                            <button class="neu-btn" onclick="triggerOfferBuy('${data.title}', ${data.price}, '${data.apiServiceId}', '${data.quantity}')">Explore & Buy</button>
+                        </div>`;
+                    });
+                    container.innerHTML = htmlStr;
+                }
+            });
+
+            onValue(ref(db, 'users/' + uid + '/orders'), (snap) => {
+                let box = document.getElementById('orders-container');
+                if(!snap.exists()) box.innerHTML = `<div class="empty-state">No orders placed yet.</div>`;
+                else {
+                    let h = '';
+                    snap.forEach(c => { 
+                        let o = c.val(); 
+                        let oid = o.orderId || 'N/A';
+                        let stat = o.status || 'Pending';
+                        let statColor = stat.toLowerCase() === 'completed' || stat.toLowerCase() === 'success' ? '#00b894' : (stat.toLowerCase() === 'refunded' || stat.toLowerCase() === 'canceled' ? '#d63031' : '#e6a822');
+                        h = `<div class="history-card"><h4 style="margin-bottom:10px; font-size: 16px;">${o.serviceName}</h4><div style="font-size:13px; font-weight:600; color:var(--text-main); margin-bottom:8px; display:flex; align-items:center;">ID: ${oid}<span class="copy-btn" onclick="copyOrderId('${oid}')">📋 Copy</span></div><div style="font-size:12px; color:var(--text-muted); margin-bottom:5px;"><strong>Qty:</strong> ${o.qty}</div><div style="font-size:12px; color:var(--text-muted); margin-bottom:5px; word-break: break-all;"><strong>Link:</strong> ${o.link}</div><div style="font-size:11px; color:var(--text-muted); margin-bottom:8px;"><strong>Date:</strong> ${o.date}</div><div style="color:${statColor}; font-size:14px; font-weight:800; letter-spacing:0.5px;">Status: ${stat}</div></div>` + h; 
+                    });
+                    box.innerHTML = h;
+                }
+            });
+
+            onValue(ref(db, 'users/' + uid + '/history'), (snap) => {
+                let box = document.getElementById('history-container');
+                if(!snap.exists()) box.innerHTML = `<div class="empty-state">No transaction history.</div>`;
+                else {
+                    let h = '';
+                    snap.forEach(c => { 
+                        let o = c.val(); 
+                        h = `<div class="history-card"><h4 style="margin-bottom:5px;">Added: ₹${o.amount}</h4><div style="font-size:12px; color:var(--text-muted); margin-bottom:5px;">Date: ${o.date}</div><div style="color:#00b894; font-size:13px; font-weight:700;">Status: ${o.status || 'Success'}</div></div>` + h; 
+                    });
+                    box.innerHTML = h;
+                }
+            });
+        }
+
+        // CATEGORY & ORDER PLACEMENT
+        window.selectCategory = (catName, serviceId, element) => {
+            activeServiceId = serviceId;
+            document.querySelectorAll('.category-box').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            setTimeout(() => {
+                document.getElementById('category-selector').style.display = 'none';
+                document.getElementById('order-panel').style.display = 'block';
+                document.getElementById('order-cat-name').innerText = catName;
+                document.getElementById('order-qty').value = '';
+                document.getElementById('order-link').value = '';
+                document.getElementById('order-total-cost').innerText = '0.00';
+                
+                let infoBox = document.getElementById('service-price-info');
+                infoBox.innerHTML = '<span style="font-size: 13px; color: var(--text-muted);">Fetching details...</span>';
+                document.getElementById('btn-place-order').disabled = true;
+
+                get(ref(db, 'services/' + serviceId)).then(snap => {
+                    if(!snap.exists() || !snap.val().price || !snap.val().mainServiceId) {
+                        activeServiceRate = null;
+                        infoBox.innerHTML = `<span style="color:#d63031; font-weight:600; font-size:14px;">Data has not been added by the admin yet.</span>`;
+                    } else {
+                        let d = snap.val();
+                        document.getElementById('order-panel').dataset.mainId = d.mainServiceId; 
+                        activeServiceRate = parseFloat(d.price);
+                        activeServiceMin = d.min || 10;
+                        activeServiceMax = d.max || 10000;
+                        infoBox.innerHTML = `<p style="font-size:13px; color:var(--text-muted); font-weight:600;">Price per 1000</p><h2 class="text-gradient" style="font-size:26px; margin:5px 0;">₹${activeServiceRate}</h2><p style="font-size:12px; color:var(--text-muted); font-weight:500;">Min: ${activeServiceMin} | Max: ${activeServiceMax}</p>`;
+                        document.getElementById('btn-place-order').disabled = false;
+                    }
+                }).catch(e => { infoBox.innerHTML = `<span style="color:#d63031; font-weight:600; font-size:14px;">Error fetching price.</span>`; });
+            }, 300);
+        };
+
+        window.backToCategories = () => { document.getElementById('category-selector').style.display = 'block'; document.getElementById('order-panel').style.display = 'none'; document.querySelectorAll('.category-box').forEach(el => el.classList.remove('selected')); };
+        
+        window.calcOrderPrice = () => { 
+            let qty = document.getElementById('order-qty').value; 
+            if(qty && activeServiceRate) { 
+                document.getElementById('order-total-cost').innerText = ((qty / 1000) * activeServiceRate).toFixed(2); 
+            } else { 
+                document.getElementById('order-total-cost').innerText = '0.00'; 
+            } 
+        };
+
+        window.openConfirmModal = (type) => {
+            if(!activeServiceRate) return;
+            let qty = document.getElementById('order-qty').value; let link = document.getElementById('order-link').value;
+            if(!qty || !link) return alert("Target Link and Quantity are both required.");
+            if(qty < activeServiceMin || qty > activeServiceMax) return alert(`Quantity must be between ${activeServiceMin} and ${activeServiceMax}.`);
+            
+            let mainServiceId = document.getElementById('order-panel').dataset.mainId;
+            
+            document.getElementById('confirm-msg').innerText = `Your wallet will be charged ₹${document.getElementById('order-total-cost').innerText}. Do you want to confirm?`;
+            document.getElementById('modal-confirm').style.display = 'flex';
+            document.getElementById('btn-confirm-action').onclick = () => { 
+                closeModal('modal-confirm'); 
+                processOrderCall(qty, link, mainServiceId, document.getElementById('order-cat-name').innerText); 
+            };
+        };
+
+        window.triggerOfferBuy = (offerTitle, offerPrice, apiServiceId, quantity) => {
+            if(!apiServiceId || !quantity || apiServiceId === "undefined") {
+                return alert("This offer is not set up yet. Service ID is missing.");
+            }
+            let targetLink = prompt(`Please enter Target Link for: ${offerTitle}`);
+            if(!targetLink) return;
+            
+            document.getElementById('confirm-msg').innerText = `Your wallet will be charged ₹${offerPrice} for this offer. Do you want to confirm?`;
+            document.getElementById('modal-confirm').style.display = 'flex';
+            
+            document.getElementById('btn-confirm-action').onclick = () => { 
+                closeModal('modal-confirm'); 
+                processOrderCall(quantity, targetLink, apiServiceId, offerTitle, offerPrice); 
+            };
+        };
+
+        async function processOrderCall(quantity, targetLink, mainServiceId, serviceName, customPrice = null) {
+            showLoader();
+            try {
+                const balRef = ref(db, 'users/' + currentUser.uid + '/walletBalance');
+                const balSnap = await get(balRef);
+                const currentBalance = parseFloat(balSnap.val() || 0);
+                const requiredAmount = customPrice !== null ? parseFloat(customPrice) : parseFloat(document.getElementById('order-total-cost').innerText);
+
+                if(currentBalance < requiredAmount) {
+                    hideLoader();
+                    if(confirm("Insufficient balance! Add funds to wallet first?")) navTo('wallet');
+                    return;
+                }
+
+                const payload = {
+                    action: 'place_order',
+                    service: mainServiceId,
+                    link: targetLink,
+                    quantity: quantity,
+                    uid: currentUser.uid
+                };
+
+                let response = await fetch(SCRIPT_URL, {
+                    method: 'POST', redirect: 'follow',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+
+                let resultText = await response.text();
+                try {
+                    let result = JSON.parse(resultText);
+                    if(result.order) { 
+                        await set(balRef, currentBalance - requiredAmount);
+                        alert("Order placed successfully! Order ID: " + result.order);
+                        await push(ref(db, 'users/' + currentUser.uid + '/orders'), { 
+                            serviceName: serviceName, 
+                            qty: quantity, 
+                            link: targetLink, 
+                            date: new Date().toLocaleString(), 
+                            orderId: result.order, 
+                            status: "Pending"
+                        });
+                        hideLoader();
+                        backToCategories();
+                    } else {
+                        hideLoader();
+                        alert("Order Issue: " + (result.error || "Technical Issue at SMM Provider."));
+                    }
+                } catch(e) {
+                    hideLoader();
+                    alert("Bridge API Error. Please check Apps Script setup.");
+                }
+
+            } catch(e) { 
+                hideLoader(); 
+                alert("Order Process Error: " + e.message); 
+            }
+        }
+
+        // ====================================================
+        // AUTOMATED FAM-PAY DYNAMIC QR PAYMENT SYSTEM
+        // ====================================================
+        function generateRandomNoteCode() {
+            const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+            let code = 'STX';
+            for (let i = 0; i < 5; i++) {
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return code;
+        }
+
+        window.generateDynamicQR = () => {
+            const amtInput = document.getElementById('wallet-amt').value;
+            if(!amtInput || amtInput < 1) return alert("Please enter a valid amount (Minimum ₹1)");
+
+            const amount = parseFloat(amtInput).toFixed(2);
+            const noteCode = generateRandomNoteCode();
+            const expiresAt = Date.now() + (5 * 60 * 1000); // 5 Minutes Timestamp
+
+            const sessionData = {
+                amount: amount,
+                noteCode: noteCode,
+                expiresAt: expiresAt,
+                uid: currentUser.uid
+            };
+
+            localStorage.setItem('active_qr_session_' + currentUser.uid, JSON.stringify(sessionData));
+            displayQRSession(sessionData);
+        };
+
+        function displayQRSession(session) {
+            document.getElementById('add-funds-form').style.display = 'none';
+            document.getElementById('qr-display-box').style.display = 'block';
+            
+            document.getElementById('qr-amt-text').innerText = session.amount;
+            document.getElementById('qr-note-code').innerText = session.noteCode;
+
+            // Generate UPI Dynamic QR Code Image URL
+            const upiString = `upi://pay?pa=${FAM_UPI_ID}&pn=Staexso&am=${session.amount}&tn=${session.noteCode}&cu=INR`;
+            const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(upiString)}`;
+            document.getElementById('qr-image').src = qrApiUrl;
+
+            startQRCountdown(session.expiresAt);
+        }
+
+        function startQRCountdown(expiresAt) {
+            if(qrTimerInterval) clearInterval(qrTimerInterval);
+
+            qrTimerInterval = setInterval(() => {
+                const now = Date.now();
+                const diff = expiresAt - now;
+
+                if (diff <= 0) {
+                    clearInterval(qrTimerInterval);
+                    document.getElementById('qr-timer').innerText = "00:00 - EXPIRED";
+                    alert("QR Code has expired! Please generate a new QR code.");
+                    cancelQRSession();
+                } else {
+                    const minutes = Math.floor(diff / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                    document.getElementById('qr-timer').innerText = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                }
+            }, 1000);
+        }
+
+        function checkActiveQRSession() {
+            if(!currentUser) return;
+            const saved = localStorage.getItem('active_qr_session_' + currentUser.uid);
+            if(saved) {
+                try {
+                    const session = JSON.parse(saved);
+                    if(Date.now() < session.expiresAt) {
+                        displayQRSession(session);
+                    } else {
+                        localStorage.removeItem('active_qr_session_' + currentUser.uid);
+                    }
+                } catch(e) {}
+            }
+        }
+
+        window.copyNoteCode = () => {
+            const code = document.getElementById('qr-note-code').innerText;
+            navigator.clipboard.writeText(code).then(() => alert("UPI Note Code Copied: " + code));
+        };
+
+        window.cancelQRSession = () => {
+            if(qrTimerInterval) clearInterval(qrTimerInterval);
+            if(currentUser) localStorage.removeItem('active_qr_session_' + currentUser.uid);
+            document.getElementById('qr-display-box').style.display = 'none';
+            document.getElementById('add-funds-form').style.display = 'block';
+            document.getElementById('wallet-amt').value = '';
+        };
+
+        window.verifyAutoPayment = async () => {
+            if(!currentUser) return;
+            const saved = localStorage.getItem('active_qr_session_' + currentUser.uid);
+            if(!saved) return alert("No active payment QR session found. Please generate a new QR code.");
+
+            const session = JSON.parse(saved);
+            const btn = document.getElementById('btn-verify-payment');
+            btn.disabled = true;
+            btn.innerText = "Checking Payment Status... ⏳";
+
+            try {
+                const payload = {
+                    action: 'verify_payment',
+                    noteCode: session.noteCode,
+                    amount: session.amount,
+                    uid: currentUser.uid,
+                    email: currentUser.email
+                };
+
+                let response = await fetch(SCRIPT_URL, {
+                    method: 'POST', redirect: 'follow',
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+
+                let resultText = await response.text();
+                btn.disabled = false;
+                btn.innerText = "Verify Payment Now ⚡";
+
+                try {
+                    let result = JSON.parse(resultText);
+                    if(result.success) {
+                        alert(`🎉 Payment Verified Successfully! ₹${session.amount} has been added to your wallet.`);
+                        cancelQRSession();
+                    } else {
+                        alert(result.message || "Payment notification not found in Gmail yet. Please complete the payment and try again in a few seconds.");
+                    }
+                } catch(e) {
+                    alert("Bridge API Error: Could not parse response from server.");
+                }
+
+            } catch(e) {
+                btn.disabled = false;
+                btn.innerText = "Verify Payment Now ⚡";
+                alert("Verification Network Error: " + e.message);
+            }
+        };
+
+        // PROFILE & HELPERS
+        window.uploadAvatarLocal = (event) => {
+            const file = event.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const base64Img = e.target.result;
+                    document.getElementById('profile-img').src = base64Img;
+                    localStorage.setItem('avatar_' + currentUser.uid, base64Img);
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        window.openWhatsAppHelp = () => {
+            get(ref(db, 'admin/whatsapp')).then(snap => {
+                let waNum = snap.exists() ? snap.val().trim() : "918095858881";
+                let userEmail = currentUser ? currentUser.email : "Unknown Email";
+                let message = `Hello Admin, I need help regarding my SMM account. Registered email: ${userEmail}`;
+                let waUrl = `https://wa.me/${waNum}?text=${encodeURIComponent(message)}`;
+                window.open(waUrl, "_blank");
+            });
+        };
+
+        function extractYouTubeID(url) {
+            let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/;
+            let match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        }
+
+        window.openVideoModal = (type) => {
+            let dbPath = type === 'payment' ? 'admin/how_to_pay_video' : 'admin/how_to_tutorial_video';
+            get(ref(db, dbPath)).then(snap => {
+                let videoBox = document.getElementById('video-content');
+                if(!snap.exists() || !snap.val().trim()) {
+                    videoBox.innerHTML = `<p style="padding: 40px 20px; color: var(--text-muted); font-weight: 500; font-size: 14px;">Admin has not uploaded any tutorial video yet.</p>`;
+                } else {
+                    let rawUrl = snap.val().trim();
+                    let vidId = extractYouTubeID(rawUrl);
+                    if(vidId) {
+                        let embedUrl = `https://www.youtube.com/embed/${vidId}`;
+                        videoBox.innerHTML = `<iframe width="100%" height="250" src="${embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border: none;"></iframe>`;
+                    } else {
+                        videoBox.innerHTML = `<p style="color:red; padding: 20px;">Invalid YouTube URL in database.</p>`;
+                    }
+                }
+                document.getElementById('modal-video').style.display = 'flex';
+            }).catch(e=>console.log(e));
+        };
+    </script>
+</body>
+</html>

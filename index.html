@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#18C729" />
+<meta name="msapplication-TileColor" content="#18C729" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<title>STAEXSO — Premium USA Business Data | Malls, Manufacturers & Hotels</title>
+<meta name="description" content="STAEXSO offers premium USA business data. Buy verified 100 USA Malls, 100 USA Manufacturers, and 100 USA Hotels data in PDF format. Instant delivery, secure payment." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  * { -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #FFFFFF;
+    color: #0A0A0A;
+    overscroll-behavior-y: none;
+    margin: 0;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #18C729 0%, #0F9D1C 100%);
+    border-radius: 999px;
+  }
+
+  .text-brand-gradient {
+    background: linear-gradient(135deg, #18C729 0%, #0F9D1C 50%, #0A6B13 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .shadow-brand-md { box-shadow: 0 8px 24px -6px rgba(24,199,41,0.3), 0 2px 6px -2px rgba(24,199,41,0.2); }
+  .shadow-brand-lg { box-shadow: 0 20px 50px -12px rgba(24,199,41,0.35), 0 8px 16px -8px rgba(24,199,41,0.25); }
+  .shadow-card-premium {
+    box-shadow: 0 1px 2px rgba(10,10,10,0.04), 0 4px 12px -2px rgba(10,10,10,0.06), 0 16px 40px -12px rgba(10,10,10,0.08);
+  }
+  .shadow-card-hover {
+    box-shadow: 0 4px 8px rgba(24,199,41,0.08), 0 16px 32px -8px rgba(24,199,41,0.18), 0 32px 64px -20px rgba(24,199,41,0.25);
+  }
+
+  .glass-premium {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.6);
+  }
+
+  .bg-dots-brand {
+    background-image: radial-gradient(rgba(24,199,41,0.18) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 28s linear infinite; }
+
+  @keyframes ticker-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.85); }
+  }
+  .ticker-dot { animation: ticker-pulse 1.4s ease-in-out infinite; }
+
+  .btn-press {
+    transition: transform 0.18s cubic-bezier(0.76,0,0.23,1), box-shadow 0.3s cubic-bezier(0.76,0,0.23,1);
+  }
+  .btn-press:active { transform: scale(0.97); }
+
+  @keyframes shimmer-slide {
+    0% { transform: translateX(-120%) skewX(-12deg); }
+    100% { transform: translateX(220%) skewX(-12deg); }
+  }
+  .shimmer-on-hover { position: relative; overflow: hidden; }
+  .shimmer-on-hover::after {
+    content: "";
+    position: absolute; top: 0; left: 0;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: translateX(-120%) skewX(-12deg);
+    pointer-events: none;
+  }
+  .shimmer-on-hover:hover::after { animation: shimmer-slide 0.9s cubic-bezier(0.76,0,0.23,1); }
+
+  .video-frame-premium {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+    box-shadow: 0 0 0 1px rgba(24,199,41,0.18), 0 20px 50px -12px rgba(0,0,0,0.25), 0 40px 100px -30px rgba(24,199,41,0.3);
+  }
+
+  .text-balance { text-wrap: balance; }
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+
+  /* 3D card animations */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes floatY2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes spin360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes spinRev {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+  @keyframes pulseScale {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+  }
+  .float-card-front { animation: floatY 4s ease-in-out 0.6s infinite; transition: transform 0.5s ease, opacity 0.5s ease; }
+  .float-card-back-r { animation: floatY2 4s ease-in-out infinite; transition: transform 0.5s ease, opacity 0.5s ease; }
+  .float-card-back-l { animation: floatY2 4s ease-in-out 0.3s infinite; transition: transform 0.5s ease, opacity 0.5s ease; }
+  .ring-outer { animation: spin360 24s linear infinite; }
+  .ring-inner { animation: spinRev 30s linear infinite; }
+  .emoji-pulse { animation: pulseScale 5s ease-in-out infinite; }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.76,0,0.23,1), transform 0.8s cubic-bezier(0.76,0,0.23,1);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile drawer */
+  .drawer { transform: translateX(100%); transition: transform 0.45s cubic-bezier(0.76,0,0.23,1); }
+  .drawer.open { transform: translateX(0); }
+  .drawer-backdrop { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+
+  /* Video modal */
+  .modal { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .modal.open { opacity: 1; pointer-events: auto; }
+  .modal-card { transform: translateY(40px) scale(0.97); transition: transform 0.45s cubic-bezier(0.76,0,0.23,1); }
+  .modal.open .modal-card { transform: translateY(0) scale(1); }
+
+  /* Sales toast */
+  .toast {
+    opacity: 0;
+    transform: translateY(24px) translateX(-16px) scale(0.95);
+    transition: opacity 0.5s cubic-bezier(0.76,0,0.23,1), transform 0.5s cubic-bezier(0.76,0,0.23,1);
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+  }
+
+  /* FAQ */
+  .faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.76,0,0.23,1), opacity 0.4s cubic-bezier(0.76,0,0.23,1);
+  }
+  .faq-item.open .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+  }
+  .faq-chevron { transition: transform 0.4s cubic-bezier(0.76,0,0.23,1); }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#top" class="flex items-center gap-2">
+        <span class="relative inline-flex">
+          <span class="w-2.5 h-2.5 rounded-full" style="background:#18C729;box-shadow:0 2px 8px -2px rgba(24,199,41,0.5)"></span>
+          <span class="absolute inset-0 rounded-full animate-ping" style="background:rgba(24,199,41,0.4)"></span>
+        </span>
+        <span class="font-bold text-[1.05rem] tracking-tight text-[#0A0A0A]">STAEXSO</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#products" class="relative text-sm font-medium text-[#0A0A0A]/70 hover:text-[#0A0A0A] transition-colors duration-300 group">
+          Products
+          <span class="absolute -bottom-1 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-400" style="background:#18C729;transition-timing-function:cubic-bezier(0.76,0,0.23,1)"></span>
+        </a>
+        <a href="#features" class="relative text-sm font-medium text-[#0A0A0A]/70 hover:text-[#0A0A0A] transition-colors duration-300 group">
+          Why STAEXSO
+          <span class="absolute -bottom-1 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-400" style="background:#18C729;transition-timing-function:cubic-bezier(0.76,0,0.23,1)"></span>
+        </a>
+        <a href="#testimonials" class="relative text-sm font-medium text-[#0A0A0A]/70 hover:text-[#0A0A0A] transition-colors duration-300 group">
+          Reviews
+          <span class="absolute -bottom-1 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-400" style="background:#18C729;transition-timing-function:cubic-bezier(0.76,0,0.23,1)"></span>
+        </a>
+        <a href="#faq" class="relative text-sm font-medium text-[#0A0A0A]/70 hover:text-[#0A0A0A] transition-colors duration-300 group">
+          FAQ
+          <span class="absolute -bottom-1 left-0 h-0.5 w-0 group-hover:w-full transition-all duration-400" style="background:#18C729;transition-timing-function:cubic-bezier(0.76,0,0.23,1)"></span>
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <div class="hidden xs:flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border" style="background:#E8FCE9;border-color:rgba(24,199,41,0.15)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          <span class="text-[11px] font-semibold tracking-wide" style="color:#0A6B13">Verified</span>
+        </div>
+
+        <a href="#products" class="btn-press shimmer-on-hover inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-white text-xs font-semibold shadow-brand-md hover:shadow-brand-lg transition-shadow duration-400" style="background:#18C729">
+          Buy Now
+          <span class="text-[10px] opacity-80">₹199</span>
+        </a>
+
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full text-[#0A0A0A]" style="background:rgba(10,10,10,0.05)" aria-label="Open menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer backdrop -->
+<div id="drawerBackdrop" class="drawer-backdrop fixed inset-0 z-[60] md:hidden" style="background:rgba(10,10,10,0.4);backdrop-filter:blur(4px)"></div>
+
+<!-- Mobile drawer -->
+<div id="drawer" class="drawer fixed top-0 right-0 bottom-0 z-[61] w-[78%] max-w-xs bg-white shadow-2xl md:hidden flex flex-col">
+  <div class="flex items-center justify-between p-5 border-b" style="border-color:#E5E7EB">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full" style="background:#18C729"></span>
+      <span class="font-bold text-[#0A0A0A]">STAEXSO</span>
+    </div>
+    <button id="closeDrawer" class="w-9 h-9 rounded-full inline-flex items-center justify-center" style="background:rgba(10,10,10,0.05)" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="flex-1 p-5 flex flex-col gap-1">
+    <a href="#products" class="drawer-link flex items-center justify-between px-4 py-3.5 rounded-2xl text-[#0A0A0A] hover:bg-[#E8FCE9] transition-colors">
+      <span class="font-medium">Products</span><span class="text-[#6B7280] text-sm">→</span>
+    </a>
+    <a href="#features" class="drawer-link flex items-center justify-between px-4 py-3.5 rounded-2xl text-[#0A0A0A] hover:bg-[#E8FCE9] transition-colors">
+      <span class="font-medium">Why STAEXSO</span><span class="text-[#6B7280] text-sm">→</span>
+    </a>
+    <a href="#testimonials" class="drawer-link flex items-center justify-between px-4 py-3.5 rounded-2xl text-[#0A0A0A] hover:bg-[#E8FCE9] transition-colors">
+      <span class="font-medium">Reviews</span><span class="text-[#6B7280] text-sm">→</span>
+    </a>
+    <a href="#faq" class="drawer-link flex items-center justify-between px-4 py-3.5 rounded-2xl text-[#0A0A0A] hover:bg-[#E8FCE9] transition-colors">
+      <span class="font-medium">FAQ</span><span class="text-[#6B7280] text-sm">→</span>
+    </a>
+  </nav>
+  <div class="p-5 border-t" style="border-color:#E5E7EB">
+    <a href="#products" class="drawer-link btn-press w-full inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl text-white font-semibold shadow-brand-md" style="background:#18C729">
+      Browse Products · ₹199
+    </a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative pt-20 pb-20 sm:pt-24 sm:pb-28 overflow-hidden" style="background:linear-gradient(180deg,#18C729 0%,#18C729 35%,#0F9D1C 55%,#0A6B13 75%,#FFFFFF 100%)">
+  <div class="absolute top-0 left-0 right-0 h-[60%] pointer-events-none opacity-15" style="background-image:linear-gradient(to right,rgba(255,255,255,0.4) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.4) 1px,transparent 1px);background-size:32px 32px"></div>
+  <div class="absolute -top-20 left-1/4 w-72 h-72 blur-3xl rounded-full pointer-events-none" style="background:rgba(255,255,255,0.2)"></div>
+  <div class="absolute top-32 right-0 w-80 h-80 blur-3xl rounded-full pointer-events-none" style="background:rgba(10,107,19,0.4)"></div>
+
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="absolute inset-x-0 -top-2 flex justify-center pointer-events-none select-none">
+      <span class="font-black text-[26vw] leading-none tracking-tighter whitespace-nowrap" style="color:rgba(255,255,255,0.15)">STAEXSO</span>
+    </div>
+
+    <div class="relative pt-6 sm:pt-10">
+      <div class="flex justify-center">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border" style="background:rgba(255,255,255,0.2);backdrop-filter:blur(12px);border-color:rgba(255,255,255,0.4)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+          <span class="text-[11px] font-bold text-white tracking-[0.14em] uppercase">Premium USA Business Data</span>
+        </div>
+      </div>
+
+      <!-- 3D Product Showcase (AUTOMATIC SHUFFLE CARDS - TASH KE PATTE) -->
+      <div class="mt-6 flex justify-center" style="perspective:1200px">
+        <div class="relative" style="transform-style:preserve-3d">
+          <div class="ring-outer absolute -inset-6 rounded-full border-2 border-dashed pointer-events-none" style="border-color:rgba(255,255,255,0.4)"></div>
+          <div class="ring-inner absolute -inset-10 rounded-full border pointer-events-none" style="border-color:rgba(255,255,255,0.2)"></div>
+
+          <div class="relative flex items-center justify-center">
+            <!-- Back-right card -->
+            <div id="heroCardRight" class="float-card-back-r absolute -z-10" style="transform:translateX(48px) translateY(8px) rotate(6deg)">
+              <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl shadow-xl overflow-hidden border" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border-color:rgba(255,255,255,0.5)">
+                <div class="h-full flex flex-col items-center justify-center p-4">
+                  <div class="text-4xl sm:text-5xl opacity-90">🏨</div>
+                  <div class="mt-2 text-[10px] font-bold uppercase tracking-wider" style="color:rgba(10,10,10,0.6)">Hotels</div>
+                  <div class="mt-1 text-[12px] font-bold text-[#0A0A0A]">100 Records</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back-left card -->
+            <div id="heroCardLeft" class="float-card-back-l absolute -z-10" style="transform:translateX(-48px) translateY(12px) rotate(-6deg)">
+              <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl shadow-xl overflow-hidden border" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border-color:rgba(255,255,255,0.5)">
+                <div class="h-full flex flex-col items-center justify-center p-4">
+                  <div class="text-4xl sm:text-5xl opacity-90">🏭</div>
+                  <div class="mt-2 text-[10px] font-bold uppercase tracking-wider" style="color:rgba(10,10,10,0.6)">Manufacturers</div>
+                  <div class="mt-1 text-[12px] font-bold text-[#0A0A0A]">100 Records</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Front card -->
+            <div id="heroCardFront" class="float-card-front relative" style="transform-style:preserve-3d">
+              <div class="relative w-44 h-44 sm:w-52 sm:h-52 rounded-3xl bg-white shadow-2xl overflow-hidden">
+                <div class="absolute top-0 inset-x-0 h-1.5" style="background:linear-gradient(to right,#18C729,#0F9D1C,#0A6B13)"></div>
+                <div class="absolute -top-10 -right-10 w-32 h-32 blur-2xl rounded-full" style="background:rgba(24,199,41,0.3)"></div>
+                <div class="relative h-full flex flex-col items-center justify-center p-5">
+                  <div class="emoji-pulse text-6xl sm:text-7xl">🏬</div>
+                  <div class="mt-3 text-[10px] font-bold uppercase tracking-wider" style="color:#0A6B13">Best Seller</div>
+                  <div class="mt-1 text-[14px] font-black text-[#0A0A0A] leading-tight text-center">100 USA Malls</div>
+                  <div class="mt-2 inline-flex items-center gap-1 px-2.5 py-1 rounded-full" style="background:#E8FCE9">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span class="text-[10px] font-bold" style="color:#0A6B13">PDF · ₹199</span>
+                  </div>
+                </div>
+                <div class="absolute bottom-0 inset-x-0 h-12" style="background:linear-gradient(to top,rgba(232,252,233,0.6),transparent)"></div>
+              </div>
+              <div class="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-white text-[11px] font-black shadow-xl" style="background:#0A0A0A">₹199</div>
+              <div class="absolute -bottom-3 -left-3 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[10px] font-bold shadow-xl">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+                Verified
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-8 blur-xl rounded-full" style="background:rgba(10,107,19,0.3)"></div>
+        </div>
+      </div>
+
+      <h1 class="mt-6 text-center text-[2.2rem] sm:text-[3rem] leading-[1.05] font-black tracking-tight text-white text-balance" style="text-shadow:0 4px 12px rgba(0,0,0,0.15)">
+        Buy verified <span class="relative inline-block"><span class="relative z-10">USA business data</span><span class="absolute bottom-1 left-0 right-0 h-3 rounded -z-0" style="background:rgba(255,255,255,0.25)"></span></span> in clean PDFs.
+      </h1>
+
+      <p class="mt-4 text-center text-[14px] sm:text-[15px] leading-relaxed max-w-xl mx-auto" style="color:rgba(255,255,255,0.9)">
+        Three premium datasets — 100 USA Malls, 100 USA Manufacturers, and 100 USA Hotels. Complete business details, address, Google Maps references. Instant PDF delivery, ₹199 only.
+      </p>
+
+      <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+        <a href="#products" class="btn-press shimmer-on-hover group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white font-bold shadow-2xl hover:shadow-xl transition-shadow" style="color:#0A6B13">
+          Browse Datasets
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn-press inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-white font-semibold border hover:bg-white/25 transition-all" style="background:rgba(255,255,255,0.15);backdrop-filter:blur(12px);border-color:rgba(255,255,255,0.4)">
+          How it works
+        </a>
+      </div>
+
+      <div class="mt-7 flex items-center justify-center gap-4 text-white flex-wrap">
+        <div class="flex items-center gap-1">
+          <span class="text-[14px]">★★★★★</span>
+        </div>
+        <span class="text-[12px] font-bold">4.9/5 · 200+ customers</span>
+        <span class="w-1 h-1 rounded-full" style="background:rgba(255,255,255,0.7)"></span>
+        <span class="text-[12px] font-bold flex items-center gap-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          300+ records sold
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE BANNER ============ -->
+<section class="relative py-3.5 text-white overflow-hidden" style="background:linear-gradient(to right,#18C729 0%,#0F9D1C 50%,#18C729 100%);border-top:2px solid #0A6B13;border-bottom:2px solid #0A6B13">
+  <div class="flex w-max animate-marquee">
+    <div class="flex items-center gap-8 pr-8">
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">⚡ Instant PDF Delivery</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">🛡️ Secure Payment Gateway</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">✓ Organized & Verified Data</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">📍 Google Maps References</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">📱 Mobile-Friendly PDF</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">💬 WhatsApp Support 24/7</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">📊 100 Records Per Dataset</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">🌐 Publicly Available Sources</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+    </div>
+    <div class="flex items-center gap-8 pr-8" aria-hidden="true">
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">⚡ Instant PDF Delivery</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">🛡️ Secure Payment Gateway</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">✓ Organized & Verified Data</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">📍 Google Maps References</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">📱 Mobile-Friendly PDF</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">💬 WhatsApp Support 24/7</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">📊 100 Records Per Dataset</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+      <span class="flex items-center gap-2 whitespace-nowrap text-[12px] font-bold tracking-wide text-white">🌐 Publicly Available Sources</span>
+      <span class="w-1 h-1 rounded-full bg-white/70"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS SECTION ============ -->
+<section id="products" class="relative py-16 sm:py-24 bg-white overflow-hidden">
+  <div class="absolute inset-0 bg-dots-brand opacity-40 pointer-events-none"></div>
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[300px] blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.1)"></div>
+  <div class="absolute top-40 -left-20 w-40 h-40 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.08)"></div>
+  <div class="absolute bottom-40 -right-20 w-48 h-48 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.08)"></div>
+
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="text-center">
+      <div class="reveal inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border" style="background:#E8FCE9;border-color:rgba(24,199,41,0.15)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+        <span class="text-[11px] font-semibold uppercase tracking-wide" style="color:#0A6B13">Premium Datasets</span>
+      </div>
+      <h2 class="reveal mt-4 text-[1.8rem] sm:text-[2.3rem] font-black tracking-tight text-[#0A0A0A] leading-[1.1] text-balance">
+        Choose your <span class="text-brand-gradient">USA business dataset</span>
+      </h2>
+      <p class="reveal mt-3 text-[14px] text-[#6B7280] max-w-md mx-auto leading-relaxed">
+        Three meticulously curated datasets covering the most valuable business categories in the United States. Each one is delivered as a clean, organized PDF — ready to use the moment you check out.
+      </p>
+    </div>
+
+    <div id="productGrid" class="mt-10 sm:mt-12 flex flex-col gap-6 sm:gap-8"></div>
+
+    <!-- Bundle CTA -->
+    <div class="reveal mt-10 sm:mt-12 relative overflow-hidden rounded-[28px] p-6 sm:p-8 shadow-card-premium" style="background:linear-gradient(135deg,#18C729 0%,#0F9D1C 60%,#0A6B13 100%)">
+      <div class="absolute inset-0 opacity-30 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.08) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.08) 1px,transparent 1px);background-size:32px 32px"></div>
+      <div class="absolute -right-10 -top-10 w-48 h-48 blur-3xl rounded-full pointer-events-none" style="background:rgba(255,255,255,0.2)"></div>
+      <div class="relative text-white">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border" style="background:rgba(255,255,255,0.2);border-color:rgba(255,255,255,0.4)">
+          <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:white"></span>
+          <span class="text-[10px] font-bold uppercase tracking-wide">Bundle Offer</span>
+        </div>
+        <h3 class="mt-3 text-xl sm:text-2xl font-black leading-tight">Buy all 3 datasets — 300 verified USA records.</h3>
+        <p class="mt-2 text-[13px] max-w-md leading-relaxed" style="color:rgba(255,255,255,0.85)">
+          Get the complete STAEXSO USA business collection: 100 Malls + 100 Manufacturers + 100 Hotels. Perfect for cross-industry outreach, lead-gen, and market research.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="#products" class="btn-press shimmer-on-hover inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white font-bold shadow-lg" style="color:#0A6B13">
+            Buy All 3 · ₹597
+          </a>
+          <span class="text-[12px]" style="color:rgba(255,255,255,0.8)">or pick individual datasets above</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how-it-works" class="relative py-16 sm:py-24 overflow-hidden" style="background:linear-gradient(180deg,#F2FEF4 0%,#FFFFFF 100%)">
+  <div class="absolute inset-0 bg-dots-brand opacity-30 pointer-events-none"></div>
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="text-center">
+      <div class="reveal inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border shadow-card-premium" style="border-color:rgba(24,199,41,0.15)">
+        <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+        <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#0A6B13">How It Works</span>
+      </div>
+      <h2 class="reveal mt-4 text-[1.7rem] sm:text-[2.2rem] font-black tracking-tight text-[#0A0A0A] leading-[1.1] text-balance">
+        From click to download in <span class="text-brand-gradient">under 60 seconds</span>
+      </h2>
+      <p class="reveal mt-3 text-[14px] text-[#6B7280] max-w-md mx-auto leading-relaxed">
+        No accounts, no email verification, no friction. Just pick, pay, and download — the way buying digital data should be.
+      </p>
+    </div>
+
+    <div class="mt-10 sm:mt-12 flex flex-col gap-3 sm:gap-4">
+      <div class="reveal group relative p-5 rounded-3xl bg-white shadow-card-premium border transition-all duration-500" style="border-color:rgba(229,231,235,0.6)">
+        <div class="flex items-start gap-4">
+          <div class="relative shrink-0">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-400" style="background:#E8FCE9">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74"/><path d="M14 11.24V9.5a2.5 2.5 0 0 1 5 0V14a7 7 0 0 1-7 7H10a7 7 0 0 1-7-7v-2.5a2.5 2.5 0 0 1 5 0v2.74"/></svg>
+            </div>
+            <span class="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-white text-[9px] font-bold" style="background:#0A0A0A">01</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="text-[15px] font-bold text-[#0A0A0A] leading-tight">Pick your dataset</h3>
+            <p class="mt-1 text-[12.5px] text-[#6B7280] leading-relaxed">Choose from 100 USA Malls, 100 USA Manufacturers, or 100 USA Hotels. Each dataset costs ₹199 and includes complete business details.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal group relative p-5 rounded-3xl bg-white shadow-card-premium border transition-all duration-500" style="border-color:rgba(229,231,235,0.6)">
+        <div class="flex items-start gap-4">
+          <div class="relative shrink-0">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-400" style="background:#E8FCE9">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <span class="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-white text-[9px] font-bold" style="background:#0A0A0A">02</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="text-[15px] font-bold text-[#0A0A0A] leading-tight">Pay securely</h3>
+            <p class="mt-1 text-[12.5px] text-[#6B7280] leading-relaxed">Tap 'Buy Now' and you'll be redirected to a secure checkout page. We support all major payment methods — UPI, cards, net banking, and wallets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal group relative p-5 rounded-3xl bg-white shadow-card-premium border transition-all duration-500" style="border-color:rgba(229,231,235,0.6)">
+        <div class="flex items-start gap-4">
+          <div class="relative shrink-0">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl transition-all duration-400" style="background:#E8FCE9">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <span class="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center min-w-5 h-5 px-1 rounded-full text-white text-[9px] font-bold" style="background:#0A0A0A">03</span>
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="text-[15px] font-bold text-[#0A0A0A] leading-tight">Download instantly</h3>
+            <p class="mt-1 text-[12.5px] text-[#6B7280] leading-relaxed">The moment your payment is confirmed, your PDF download link unlocks automatically. No waiting, no email verification — instant access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="relative py-14 sm:py-16 overflow-hidden" style="background:linear-gradient(135deg,#F2FEF4 0%,#E8FCE9 50%,#F2FEF4 100%)">
+  <div class="absolute inset-0 bg-dots-brand opacity-30 pointer-events-none"></div>
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="text-center mb-8 sm:mb-10">
+      <div class="reveal inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border shadow-card-premium" style="border-color:rgba(24,199,41,0.15)">
+        <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+        <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#0A6B13">Trusted Numbers</span>
+      </div>
+      <h2 class="reveal mt-3 text-[1.6rem] sm:text-[2rem] font-black tracking-tight text-[#0A0A0A]">
+        The numbers behind <span class="text-brand-gradient">STAEXSO</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+      <div class="reveal relative p-5 rounded-3xl bg-white shadow-card-premium border" style="border-color:rgba(229,231,235,0.6)">
+        <div class="text-[2rem] sm:text-[2.4rem] font-black text-brand-gradient leading-none tabular-nums" data-counter="300" data-suffix="+">0+</div>
+        <div class="mt-2 text-[13px] font-bold text-[#0A0A0A] leading-tight">Total Business Records</div>
+        <div class="text-[11px] text-[#6B7280] mt-0.5">Across 3 categories</div>
+        <div class="absolute top-3 right-3 w-1.5 h-1.5 rounded-full" style="background:rgba(24,199,41,0.5)"></div>
+      </div>
+      <div class="reveal relative p-5 rounded-3xl bg-white shadow-card-premium border" style="border-color:rgba(229,231,235,0.6)">
+        <div class="text-[2rem] sm:text-[2.4rem] font-black text-brand-gradient leading-none tabular-nums" data-counter="100" data-suffix="">0</div>
+        <div class="mt-2 text-[13px] font-bold text-[#0A0A0A] leading-tight">Records per Dataset</div>
+        <div class="text-[11px] text-[#6B7280] mt-0.5">Malls · Manufacturers · Hotels</div>
+        <div class="absolute top-3 right-3 w-1.5 h-1.5 rounded-full" style="background:rgba(24,199,41,0.5)"></div>
+      </div>
+      <div class="reveal relative p-5 rounded-3xl bg-white shadow-card-premium border" style="border-color:rgba(229,231,235,0.6)">
+        <div class="text-[2rem] sm:text-[2.4rem] font-black text-brand-gradient leading-none tabular-nums"><span data-counter="199" data-prefix="₹">₹0</span></div>
+        <div class="mt-2 text-[13px] font-bold text-[#0A0A0A] leading-tight">Starting Price</div>
+        <div class="text-[11px] text-[#6B7280] mt-0.5">Per dataset, one-time</div>
+        <div class="absolute top-3 right-3 w-1.5 h-1.5 rounded-full" style="background:rgba(24,199,41,0.5)"></div>
+      </div>
+      <div class="reveal relative p-5 rounded-3xl bg-white shadow-card-premium border" style="border-color:rgba(229,231,235,0.6)">
+        <div class="text-[2rem] sm:text-[2.4rem] font-black text-brand-gradient leading-none tabular-nums" data-counter="24" data-suffix="/7">0/7</div>
+        <div class="mt-2 text-[13px] font-bold text-[#0A0A0A] leading-tight">WhatsApp Support</div>
+        <div class="text-[11px] text-[#6B7280] mt-0.5">Always available</div>
+        <div class="absolute top-3 right-3 w-1.5 h-1.5 rounded-full" style="background:rgba(24,199,41,0.5)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features" class="relative py-16 sm:py-24 bg-white overflow-hidden">
+  <div class="absolute inset-0 bg-dots-brand opacity-30 pointer-events-none"></div>
+  <div class="absolute top-20 -right-20 w-72 h-72 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.08)"></div>
+  <div class="absolute bottom-20 -left-20 w-72 h-72 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.06)"></div>
+
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="text-center">
+      <div class="reveal inline-flex items-center gap-1.5 px-3 py-1 rounded-full border" style="background:#E8FCE9;border-color:rgba(24,199,41,0.15)">
+        <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+        <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#0A6B13">Why STAEXSO</span>
+      </div>
+      <h2 class="reveal mt-4 text-[1.7rem] sm:text-[2.2rem] font-black tracking-tight text-[#0A0A0A] leading-[1.1] text-balance">
+        Built for sales teams, founders & <span class="text-brand-gradient">B2B researchers</span>
+      </h2>
+      <p class="reveal mt-3 text-[14px] text-[#6B7280] max-w-md mx-auto leading-relaxed">
+        Every dataset we ship is designed to plug directly into your outreach workflow. No cleanup, no fixing, no friction — just open the PDF and start working.
+      </p>
+    </div>
+
+    <div id="featuresGrid" class="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"></div>
+
+    <div class="reveal mt-8 p-4 rounded-2xl flex items-center justify-center gap-2 text-white text-[12px] font-semibold" style="background:linear-gradient(to right,#18C729,#0F9D1C)">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      All STAEXSO datasets are compiled from publicly available sources — legal, ethical, and ready to use.
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="relative py-16 sm:py-24 overflow-hidden" style="background:linear-gradient(180deg,#F2FEF4 0%,#FFFFFF 100%)">
+  <div class="absolute inset-0 bg-dots-brand opacity-30 pointer-events-none"></div>
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="text-center">
+      <div class="reveal inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border shadow-card-premium" style="border-color:rgba(24,199,41,0.15)">
+        <span class="text-[14px]" style="color:#18C729">★</span>
+        <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#0A6B13">4.9 / 5 · 200+ customers</span>
+      </div>
+      <h2 class="reveal mt-4 text-[1.7rem] sm:text-[2.2rem] font-black tracking-tight text-[#0A0A0A] leading-[1.1] text-balance">
+        Loved by founders, sellers & <span class="text-brand-gradient">sales teams</span>
+      </h2>
+      <p class="reveal mt-3 text-[14px] text-[#6B7280] max-w-md mx-auto leading-relaxed">
+        Real reviews from real customers who used STAEXSO datasets to source suppliers, build partnerships, and close B2B deals in the USA.
+      </p>
+    </div>
+
+    <div id="testimonialsGrid" class="mt-10 sm:mt-12 flex flex-col gap-3 sm:gap-4"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="relative py-16 sm:py-24 bg-white overflow-hidden">
+  <div class="absolute inset-0 bg-dots-brand opacity-30 pointer-events-none"></div>
+  <div class="absolute top-0 left-0 w-64 h-64 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.08)"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.06)"></div>
+
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6">
+    <div class="text-center">
+      <div class="reveal inline-flex items-center gap-1.5 px-3 py-1 rounded-full border" style="background:#E8FCE9;border-color:rgba(24,199,41,0.15)">
+        <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+        <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#0A6B13">FAQ</span>
+      </div>
+      <h2 class="reveal mt-4 text-[1.7rem] sm:text-[2.2rem] font-black tracking-tight text-[#0A0A0A] leading-[1.1] text-balance">
+        Questions, <span class="text-brand-gradient">answered</span>
+      </h2>
+      <p class="reveal mt-3 text-[14px] text-[#6B7280] max-w-md mx-auto leading-relaxed">
+        Everything you need to know before buying. Still unsure? Tap WhatsApp support below and we'll reply in minutes.
+      </p>
+    </div>
+
+    <div id="faqList" class="mt-10 sm:mt-12 flex flex-col gap-2.5"></div>
+
+    <div class="reveal mt-8 p-4 rounded-2xl flex items-center justify-center gap-2 text-white text-[12px] font-semibold" style="background:linear-gradient(to right,#0F9D1C,#18C729)">
+      Still have questions? Chat with us on WhatsApp at +91 92347 99016 — we reply in minutes.
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="relative py-16 sm:py-24 overflow-hidden" style="background:radial-gradient(900px 500px at 50% -10%,rgba(24,199,41,0.18),transparent 60%),radial-gradient(600px 300px at 100% 50%,rgba(24,199,41,0.10),transparent 60%),#0A0A0A">
+  <div class="absolute inset-0 opacity-60 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:32px 32px"></div>
+  <div class="absolute -left-10 top-10 w-64 h-64 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.2)"></div>
+  <div class="absolute -right-10 bottom-10 w-72 h-72 blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.15)"></div>
+
+  <div class="relative mx-auto max-w-2xl px-4 sm:px-6 text-center">
+    <div class="reveal inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border" style="background:rgba(24,199,41,0.1);border-color:rgba(24,199,41,0.3)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#18C729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg>
+      <span class="text-[11px] font-bold uppercase tracking-wide" style="color:#18C729">Ready to ship?</span>
+    </div>
+
+    <h2 class="reveal mt-5 text-[2rem] sm:text-[2.6rem] font-black tracking-tight text-white leading-[1.05] text-balance">
+      Get premium USA business data <span class="text-brand-gradient">in 60 seconds.</span>
+    </h2>
+
+    <p class="reveal mt-4 text-[14px] max-w-lg mx-auto leading-relaxed" style="color:rgba(255,255,255,0.7)">
+      Pick a dataset, pay securely, and your PDF download unlocks instantly. No waiting, no email back-and-forth, no friction.
+    </p>
+
+    <div id="finalCtaGrid" class="reveal mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3"></div>
+
+    <div class="reveal mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+      <a href="#products" class="btn-press shimmer-on-hover group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl text-white font-bold shadow-brand-lg" style="background:#18C729">
+        Browse All Datasets
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+      <span class="text-[12px] self-center" style="color:rgba(255,255,255,0.5)">Instant download · Secure payment · No refunds on digital products</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REFUND FOOTER (BLACK BOX) ============ -->
+<footer class="relative text-white overflow-hidden" style="background:#0A0A0A">
+  <div class="absolute inset-0 opacity-60 pointer-events-none" style="background-image:linear-gradient(to right,rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:32px 32px"></div>
+  <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[200px] blur-3xl rounded-full pointer-events-none" style="background:rgba(24,199,41,0.1)"></div>
+
+  <div class="relative px-4 sm:px-6 py-12 sm:py-16 mx-auto max-w-2xl">
+    <!-- Refund policy block -->
+    <div class="reveal rounded-3xl p-5 sm:p-6" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1)">
+      <div class="flex items-start gap-3">
+        <div class="inline-flex items-center justify-center w-10 h-10 rounded-2xl shrink-0" style="background:rgba(220,38,38,0.15);border:1px solid rgba(220,38,38,0.3)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><line x1="12" y1="9" x2="12"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="flex-1">
+          <div class="text-[10px] font-bold uppercase tracking-[0.12em]" style="color:#F87171">Important · Refund Policy</div>
+          <h3 class="mt-1 text-[15px] font-bold text-white leading-tight">All sales are final. No refunds.</h3>
+          <p class="mt-2 text-[12.5px] leading-relaxed" style="color:rgba(255,255,255,0.65)">
+            STAEXSO sells only <span class="font-semibold" style="color:rgba(255,255,255,0.9)">digital products</span> that are delivered instantly upon successful payment. Once your download is made available, your payment is <span class="font-semibold" style="color:rgba(255,255,255,0.9)">strictly non-refundable</span>. If, however, you are unable to download the file due to a verified technical issue on our side, please reach out to WhatsApp support immediately and we will resolve it.
+          </p>
+          <p class="mt-2 text-[12.5px] leading-relaxed" style="color:rgba(255,255,255,0.65)">
+            By completing any purchase on this website, you acknowledge and accept this no-refund policy for digital products.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support block -->
+    <div class="reveal mt-5 rounded-3xl p-5 sm:p-6" style="background:linear-gradient(135deg,rgba(24,199,41,0.15),rgba(24,199,41,0.05),transparent);border:1px solid rgba(24,199,41,0.25)">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="inline-flex items-center justify-center w-8 h-8 rounded-full" style="background:rgba(24,199,41,0.2);border:1px solid rgba(24,199,41,0.4)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#18C729" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="text-[10px] font-bold uppercase tracking-[0.12em]" style="color:#18C729">Support · 24/7</div>
+          <div class="text-[13.5px] font-bold text-white">Need help? Chat with us on WhatsApp.</div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/919234799016?text=Hi%20STAEXSO%20team%2C%20I%20have%20a%20question%20about%20the%20USA%20business%20data%20products." target="_blank" rel="noopener noreferrer" class="btn-press shimmer-on-hover group inline-flex items-center justify-center gap-2 w-full px-5 py-4 rounded-2xl text-white font-bold shadow-brand-md hover:shadow-brand-lg transition-shadow" style="background:#18C729">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.712zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Chat on WhatsApp · +91 92347 99016
+      </a>
+
+      <a href="https://wa.me/919234799016" target="_blank" rel="noopener noreferrer" class="mt-2.5 inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-2xl text-[12.5px] font-medium transition-all" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.8)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Or call / WhatsApp: +91 92347 99016
+      </a>
+
+      <div class="mt-3 flex items-start gap-2 text-[11px] leading-relaxed" style="color:rgba(255,255,255,0.5)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0" style="color:rgba(24,199,41,0.6)"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <span>We typically respond within a few minutes during business hours. Please have your order details ready for faster support.</span>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="reveal mt-8 grid grid-cols-2 gap-3 text-[12px]">
+      <a href="#products" class="px-3 py-2.5 rounded-xl transition-all" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">→ Browse Products</a>
+      <a href="#faq" class="px-3 py-2.5 rounded-xl transition-all" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">→ Read FAQ</a>
+      <a href="#features" class="px-3 py-2.5 rounded-xl transition-all" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">→ Why STAEXSO</a>
+      <a href="#testimonials" class="px-3 py-2.5 rounded-xl transition-all" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.7)">→ Customer Reviews</a>
+    </div>
+
+    <div class="mt-8 h-px" style="background:linear-gradient(to right,transparent,rgba(255,255,255,0.15),transparent)"></div>
+
+    <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="relative inline-flex">
+          <span class="w-2 h-2 rounded-full" style="background:#18C729"></span>
+          <span class="absolute inset-0 rounded-full animate-ping" style="background:rgba(24,199,41,0.4)"></span>
+        </span>
+        <span class="font-bold text-white tracking-tight">STAEXSO</span>
+        <span class="text-[11px] ml-1" style="color:rgba(255,255,255,0.4)">· Premium USA Business Data</span>
+      </div>
+      <div class="text-[11px]" style="color:rgba(255,255,255,0.4)">© <span id="year"></span> STAEXSO. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ SALES NOTIFICATIONS (Floating Toast) ============ -->
+<div id="salesToast" class="toast fixed bottom-4 left-4 z-[70] pointer-events-none">
+  <div class="pointer-events-auto w-[280px] sm:w-[300px] p-3 pr-9 rounded-2xl bg-white shadow-card-hover border flex items-start gap-2.5" style="border-color:rgba(229,231,235,0.6)">
+    <div class="relative shrink-0">
+      <div class="inline-flex items-center justify-center w-9 h-9 rounded-xl" style="background:#E8FCE9">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+      </div>
+      <span class="absolute -top-1 -right-1 inline-flex items-center justify-center w-4 h-4 rounded-full shadow-brand-sm" style="background:#18C729">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </span>
+    </div>
+    <div class="flex-1 min-w-0">
+      <div id="toastMain" class="text-[12px] text-[#0A0A0A] leading-snug"></div>
+      <div id="toastProduct" class="mt-0.5 text-[12.5px] font-bold leading-snug" style="color:#0A6B13"></div>
+      <div class="mt-1 flex items-center gap-1.5 text-[10.5px] text-[#6B7280]">
+        <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+        <span id="toastTime"></span>
+      </div>
+    </div>
+    <button id="toastClose" class="absolute top-2 right-2 w-6 h-6 rounded-full inline-flex items-center justify-center transition-colors" style="color:#6B7280" aria-label="Dismiss">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ============ VIDEO MODAL ============ -->
+<div id="videoModal" class="modal fixed inset-0 z-[80] flex items-end sm:items-center justify-center p-3 sm:p-6" style="background:rgba(10,10,10,0.8);backdrop-filter:blur(8px)">
+  <div class="modal-card relative w-full max-w-lg bg-white rounded-[28px] overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+    <div class="flex items-center justify-between px-5 py-4 border-b" style="border-color:#E5E7EB">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center justify-center w-7 h-7 rounded-full" style="background:#E8FCE9">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#0A6B13"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </span>
+        <div class="flex flex-col">
+          <span class="text-[10px] uppercase tracking-[0.12em] font-bold" style="color:#0A6B13">How to Buy</span>
+          <span id="modalTitle" class="text-[13px] font-bold text-[#0A0A0A] leading-tight"></span>
+        </div>
+      </div>
+      <button id="modalClose" class="w-9 h-9 rounded-full inline-flex items-center justify-center transition-colors" style="background:rgba(10,10,10,0.05)" aria-label="Close video">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="p-4 sm:p-5" style="background:linear-gradient(to bottom right,rgba(232,252,233,0.4),white,white)">
+      <div class="video-frame-premium aspect-video relative">
+        <video id="modalVideo" class="absolute inset-0 w-full h-full object-cover" style="pointer-events:none" autoplay muted loop playsinline disablePictureInPicture controlsList="nodownload noplaybackrate nofullscreen" preload="auto"></video>
+        <div class="absolute inset-0 pointer-events-none rounded-[28px]" style="box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1)"></div>
+        <div class="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full" style="background:rgba(10,10,10,0.7);backdrop-filter:blur(8px)">
+          <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+          <span class="text-[10px] font-semibold text-white tracking-wide uppercase">Live Preview</span>
+        </div>
+        <div class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full" style="background:rgba(10,10,10,0.7);backdrop-filter:blur(8px)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <span class="text-[10px] font-medium" style="color:rgba(255,255,255,0.8)">Muted</span>
+        </div>
+        <div class="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full" style="background:rgba(10,10,10,0.7);backdrop-filter:blur(8px)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+          <span class="text-[10px] font-medium" style="color:rgba(255,255,255,0.8)">Auto-loop</span>
+        </div>
+        <div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full" style="background:rgba(10,10,10,0.7);backdrop-filter:blur(8px)">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span class="text-[10px] font-medium" style="color:rgba(255,255,255,0.8)">Locked</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalBody" class="px-5 pb-5 pt-1 overflow-y-auto"></div>
+  </div>
+</div>
+
+<script>
+// ===== Data =====
+const PRODUCTS = [
+  {
+    id: "usa-malls", category: "malls", badge: "Best Seller", emoji: "🏬",
+    title: "100 USA-Based Malls", tagline: "Premium mall & retail destination data",
+    description: "A meticulously curated dataset of 100 of the largest and most visited shopping malls across the United States. Each entry is enriched with full business details, exact location, and a publicly available Google Maps reference — all delivered in a clean, organized PDF you can use instantly.",
+    features: ["100 USA-Based Malls","Complete Mall & Business Details","Location & Address Information","Publicly Available Google Maps Data","Direct PDF Format","Organized & Easy-to-Use Data"],
+    price: 199, currency: "₹",
+    thumbnail: "https://i.ibb.co/fd55BMrF/file-000000003e20821193568a487a145317.png",
+    thumbnailAlt: "100 USA-Based Malls — premium mall dataset by STAEXSO",
+    paymentUrl: "https://superprofile.bio/vp/100-usa-malls-pdf",
+    categoryLabel: "Retail & Malls", estimatedValue: "Worth ₹4,999", dataPoints: "100 Records"
+  },
+  {
+    id: "usa-manufacturers", category: "manufacturers", badge: "Top Value", emoji: "🏭",
+    title: "100 USA-Based Manufacturers", tagline: "Verified industrial manufacturing companies",
+    description: "A powerful dataset of 100 verified manufacturing companies operating across the United States. Perfect for B2B outreach, supply-chain sourcing, partnership research, and lead generation — every record is organized for immediate use and delivered as a direct PDF download.",
+    features: ["100 USA-Based Manufacturers","Complete Business Details","Company & Location Information","Publicly Available Google Maps Data","Direct PDF Format","Easy-to-Use & Organized Data"],
+    price: 199, currency: "₹",
+    thumbnail: "https://i.ibb.co/4ZBQFBNs/file-000000003b748206a0ce9830fd0d5c7a.png",
+    thumbnailAlt: "100 USA-Based Manufacturers — verified industrial dataset by STAEXSO",
+    paymentUrl: "https://superprofile.bio/vp/100-usa-manufacture-company-pdf",
+    categoryLabel: "Manufacturing & Industry", estimatedValue: "Worth ₹4,999", dataPoints: "100 Records"
+  },
+  {
+    id: "usa-hotels", category: "hotels", badge: "Premium Pick", emoji: "🏨",
+    title: "100 USA-Based Hotels", tagline: "Premium hospitality business directory",
+    description: "An accurate, organized dataset of 100 premium hotels across the United States. Ideal for travel-tech products, partnership outreach, B2B sales, and market research. Each entry includes complete hotel details, address, and Google Maps reference — delivered as a direct PDF download.",
+    features: ["100 USA-Based Hotels","Complete Hotel & Business Details","Location & Address Information","Publicly Available Google Maps Data","Direct PDF Format","Accurate & Organized Data"],
+    price: 199, currency: "₹",
+    thumbnail: "https://i.ibb.co/bpvtP2P/file-00000000eb508211806963a2a252e8fb.png",
+    thumbnailAlt: "100 USA-Based Hotels — premium hospitality directory by STAEXSO",
+    paymentUrl: "https://superprofile.bio/vp/100-usa-hotels-pdf-",
+    categoryLabel: "Hospitality & Travel", estimatedValue: "Worth ₹4,999", dataPoints: "100 Records"
+  }
+];
+
+const PRODUCT_VIDEO_URL = "https://www.image2url.com/r2/default/videos/1788457239336-d2f5c3f3-2e8d-4503-bf03-5bf6b8a96f2a.mp4";
+
+const SALES_EVENTS = [
+  { name: "Rohan", product: "USA Malls", city: "Mumbai", minutesAgo: 2 },
+  { name: "Mohan", product: "USA Hotels", city: "Delhi", minutesAgo: 5 },
+  { name: "Priya", product: "USA Manufacturers", city: "Bengaluru", minutesAgo: 7 },
+  { name: "Arjun", product: "USA Malls", city: "Pune", minutesAgo: 11 },
+  { name: "Sneha", product: "USA Hotels", city: "Hyderabad", minutesAgo: 13 },
+  { name: "Karan", product: "USA Manufacturers", city: "Chennai", minutesAgo: 16 },
+  { name: "Neha", product: "USA Malls", city: "Ahmedabad", minutesAgo: 18 },
+  { name: "Vikram", product: "USA Hotels", city: "Jaipur", minutesAgo: 21 },
+  { name: "Ananya", product: "USA Manufacturers", city: "Kolkata", minutesAgo: 24 },
+  { name: "Aditya", product: "USA Malls", city: "Surat", minutesAgo: 27 },
+  { name: "Pooja", product: "USA Hotels", city: "Lucknow", minutesAgo: 30 },
+  { name: "Rahul", product: "USA Manufacturers", city: "New York", minutesAgo: 33 },
+  { name: "Isha", product: "USA Malls", city: "San Francisco", minutesAgo: 36 },
+  { name: "Aman", product: "USA Hotels", city: "Austin", minutesAgo: 39 },
+  { name: "Riya", product: "USA Manufacturers", city: "Seattle", minutesAgo: 42 },
+  { name: "Varun", product: "USA Malls", city: "Chicago", minutesAgo: 45 },
+  { name: "Tanya", product: "USA Hotels", city: "Boston", minutesAgo: 48 },
+  { name: "Dev", product: "USA Manufacturers", city: "Gurgaon", minutesAgo: 51 },
+  { name: "Meera", product: "USA Malls", city: "Noida", minutesAgo: 54 },
+  { name: "Yash", product: "USA Hotels", city: "Indore", minutesAgo: 57 }
+];
+
+const TESTIMONIALS = [
+  { name: "Rohit Sharma", role: "B2B Sales Lead, Mumbai", text: "Bought the USA Manufacturers dataset and used it to source 12 new suppliers in two weeks. The PDF is super clean and the Google Maps references made it easy to verify each company. Worth way more than ₹199.", rating: 5, initial: "R" },
+  { name: "Priya Nair", role: "Travel Startup Founder, Bengaluru", text: "The USA Hotels dataset was exactly what I needed for my MVP launch. 100 verified hotels, addresses, and Maps links — I plugged it straight into my outreach tool and got 8 partnership calls booked.", rating: 5, initial: "P" },
+  { name: "Aman Verma", role: "Marketplace Seller, Delhi", text: "Honestly did not expect this level of quality at ₹199. The malls dataset gave me a list of large retail destinations I would have spent days compiling manually. STAEXSO saved me at least a week of work.", rating: 5, initial: "A" },
+  { name: "Sneha Reddy", role: "Growth Marketer, Hyderabad", text: "Clean, organized, and instantly delivered. I bought all three datasets and used them for a USA outreach campaign. The PDF format is actually nicer than CSV for sharing with my team.", rating: 5, initial: "S" },
+  { name: "Karan Mehta", role: "Supply Chain Consultant, Pune", text: "The manufacturer dataset alone paid for itself within hours. Got in touch with two USA fabrication shops I didn't even know existed. Highly recommend STAEXSO for any B2B founder.", rating: 5, initial: "K" },
+  { name: "Ishita Bose", role: "Freelance Lead-Gen Specialist, Kolkata", text: "I was skeptical about buying a 'data PDF' online but the STAEXSO team is legit. Instant download after payment, WhatsApp support actually responds, and the data is well-organized. Buying again for a client.", rating: 5, initial: "I" }
+];
+
+const FEATURES = [
+  { title: "Direct PDF Format", desc: "Every dataset is delivered as a clean, well-typed PDF — no spreadsheets to clean, no messy data. Just open and use." },
+  { title: "Google Maps References", desc: "Each record includes publicly available Google Maps references and full address information, ready for outreach." },
+  { title: "Complete Business Details", desc: "Mall, manufacturer, or hotel — each entry includes the business name, category, location, and contact-relevant fields." },
+  { title: "Instant Delivery", desc: "The moment your payment is confirmed, your download link is unlocked. No waiting, no email back-and-forth." },
+  { title: "Publicly Available Sources", desc: "We only compile from publicly available, listed business information. Nothing gated, nothing private, nothing risky." },
+  { title: "24/7 WhatsApp Support", desc: "Have a question before or after buying? Tap our WhatsApp button and reach a real human any time of day." },
+  { title: "Mobile-Optimized PDF", desc: "Every PDF is built to read cleanly on a phone screen — same as on desktop. Perfect for on-the-go sales teams." },
+  { title: "Organized & Repeatable", desc: "Consistent columns, consistent layout, consistent quality across all three datasets — buy one, you'll want all three." }
+];
+
+const FAQS = [
+  { q: "What exactly do I get after payment?", a: "Immediately after a successful payment, you will be redirected to a secure download page where you can download your purchased PDF dataset. Each PDF contains 100 verified USA business records with complete business details, address information, and Google Maps references, organized in a clean and easy-to-use format." },
+  { q: "In what format is the data delivered?", a: "All datasets are delivered in PDF format. The PDF is structured with consistent columns and clean typography, making it easy to read, search, and copy into your own CRM, spreadsheet, or outreach workflow." },
+  { q: "Is the data publicly available and legal to use?", a: "Yes. Every record in our datasets is compiled from publicly available sources, including publicly available Google Maps data and publicly listed business information. We do not include any private, gated, or restricted information." },
+  { q: "Can I get a refund after purchase?", a: "No. Because every product sold by STAEXSO is a digital product that is delivered instantly and cannot be returned, all payments are strictly non-refundable once the download is made available to you. Please review the product details carefully before purchasing." },
+  { q: "How can I contact support?", a: "You can reach our support team anytime on WhatsApp at +91 92347 99016. Tap the green WhatsApp button in the support section of this page and you will be connected instantly. We typically respond within a few minutes during business hours." },
+  { q: "Can I use this data for B2B outreach and lead generation?", a: "Yes. Our customers use the data for B2B sales, lead generation, supply-chain sourcing, partnership outreach, market research, and travel-tech product development. You are free to use the data for any legitimate business purpose that complies with applicable laws." }
+];
+
+const FEATURE_ICONS = {
+  "Direct PDF Format": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><polyline points="14 2 14 8 20 8"/></svg>',
+  "Google Maps References": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  "Complete Business Details": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg>',
+  "Instant Delivery": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>',
+  "Publicly Available Sources": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
+  "24/7 WhatsApp Support": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+  "Mobile-Optimized PDF": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+  "Organized & Repeatable": '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>'
+};
+
+// ===== Render Products =====
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = PRODUCTS.map((p, i) => `
+    <article class="reveal relative group rounded-[28px] bg-white shadow-card-premium hover:shadow-card-hover transition-shadow duration-500 overflow-hidden border" style="border-color:rgba(229,231,235,0.7);transition-timing-function:cubic-bezier(0.76,0,0.23,1)">
+      <div class="h-1.5 w-full" style="background:linear-gradient(135deg,#18C729 0%,#0F9D1C 60%,#0A6B13 100%)"></div>
+      <div class="relative px-4 pt-4">
+        <div class="relative overflow-hidden rounded-[22px] aspect-video" style="background:rgba(232,252,233,0.4)">
+          <div class="absolute -inset-1 opacity-40 blur-2xl" style="background:linear-gradient(135deg,#18C729 0%,#0F9D1C 60%,#0A6B13 100%)"></div>
+          <img src="${p.thumbnail}" alt="${p.thumbnailAlt}" loading="lazy" class="relative w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style="transition-timing-function:cubic-bezier(0.76,0,0.23,1)" />
+          <div class="absolute top-3 left-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full shadow-card-premium" style="background:rgba(255,255,255,0.95);backdrop-filter:blur(8px)">
+              <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#0A6B13">${p.badge}</span>
+            </div>
+          </div>
+          <div class="absolute top-3 right-3">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full" style="background:rgba(10,10,10,0.85);backdrop-filter:blur(8px)">
+              <span class="w-1.5 h-1.5 rounded-full ticker-dot" style="background:#18C729"></span>
+              <span class="text-[10px] font-semibold text-white tracking-wide uppercase">${p.dataPoints}</span>
+            </div>
+          </div>
+          <div class="absolute bottom-0 inset-x-0 p-3" style="background:linear-gradient(to top,rgba(10,10,10,0.6),rgba(10,10,10,0.1),transparent)">
+            <div class="flex items-end justify-between">
+              <div>
+                <div class="text-[10px] font-medium uppercase tracking-wide" style="color:rgba(255,255,255,0.7)">Price</div>
+                <div class="text-white font-black text-xl leading-none">${p.currency}${p.price}</div>
+              </div>
+              <div class="text-right">
+                <div class="text-[9px] line-through" style="color:rgba(255,255,255,0.6)">${p.estimatedValue}</div>
+                <div class="text-[10px] font-bold uppercase tracking-wide" style="color:#18C729">Save 96%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-5 pt-4">
+        <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide" style="color:#0A6B13">
+          <span class="text-base leading-none">${p.emoji}</span>
+          <span>${p.categoryLabel}</span>
+        </div>
+        <h3 class="mt-1 text-[1.05rem] font-bold text-[#0A0A0A] leading-tight tracking-tight">${p.title}</h3>
+        <p class="mt-1 text-[12.5px] text-[#6B7280] leading-snug">${p.tagline}</p>
+        <p class="mt-2.5 text-[12.5px] leading-relaxed line-clamp-3" style="color:rgba(10,10,10,0.8)">${p.description}</p>
+        <ul class="mt-3.5 space-y-2">
+          ${p.features.map(f => `<li class="flex items-start gap-2 text-[12.5px] text-[#0A0A0A]"><span class="mt-0.5 inline-flex items-center justify-center w-4 h-4 rounded-full shrink-0" style="background:#E8FCE9"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="leading-snug font-medium">${f}</span></li>`).join('')}
+        </ul>
+        <div class="my-4 h-px" style="background:linear-gradient(to right,transparent,rgba(24,199,41,0.35),transparent)"></div>
+        <div class="flex flex-col gap-2">
+          <button onclick="openVideoModal(${i})" class="btn-press shimmer-on-hover group/btn w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-2xl text-white font-bold shadow-brand-md hover:shadow-brand-lg transition-shadow" style="background:#18C729">
+            Buy Now · ${p.currency}${p.price}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+// ===== Render Features =====
+function renderFeatures() {
+  const grid = document.getElementById('featuresGrid');
+  grid.innerHTML = FEATURES.map((f, i) => `
+    <div class="reveal group relative p-5 rounded-3xl bg-white border shadow-card-premium hover:shadow-card-hover transition-all duration-500 overflow-hidden" style="border-color:rgba(229,231,235,0.7);transition-timing-function:cubic-bezier(0.76,0,0.23,1)">
+      <div class="absolute top-0 right-0 w-16 h-16 rounded-bl-3xl pointer-events-none group-hover:opacity-100 transition-colors" style="background:rgba(24,199,41,0.05)"></div>
+      <div class="flex items-start gap-3.5 relative">
+        <div class="inline-flex items-center justify-center w-11 h-11 rounded-2xl transition-all duration-400 group-hover:scale-105" style="background:#E8FCE9">
+          ${FEATURE_ICONS[f.title] || ''}
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-[14px] font-bold text-[#0A0A0A] leading-tight">${f.title}</h3>
+          <p class="mt-1 text-[12px] text-[#6B7280] leading-relaxed">${f.desc}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== Render Testimonials =====
+function renderTestimonials() {
+  const grid = document.getElementById('testimonialsGrid');
+  grid.innerHTML = TESTIMONIALS.map((t, i) => `
+    <div class="reveal relative p-5 rounded-3xl bg-white shadow-card-premium border overflow-hidden" style="border-color:rgba(229,231,235,0.6)">
+      <svg class="absolute top-4 right-4" width="32" height="32" viewBox="0 0 24 24" fill="rgba(24,199,41,0.15)"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/></svg>
+      <div class="flex items-center gap-1 mb-3">
+        ${Array.from({length: t.rating}).map(() => '<span class="text-[14px]" style="color:#18C729">★</span>').join('')}
+      </div>
+      <p class="text-[13.5px] text-[#0A0A0A] leading-relaxed">"${t.text}"</p>
+      <div class="mt-4 flex items-center gap-3">
+        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full text-white font-bold text-sm shadow-brand-sm" style="background:#18C729">${t.initial}</div>
+        <div class="flex flex-col">
+          <span class="text-[13px] font-bold text-[#0A0A0A] leading-tight">${t.name}</span>
+          <span class="text-[11px] text-[#6B7280]">${t.role}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== Render FAQ =====
+function renderFAQ() {
+  const list = document.getElementById('faqList');
+  list.innerHTML = FAQS.map((faq, i) => `
+    <div class="faq-item reveal rounded-3xl border transition-all duration-500 overflow-hidden" style="border-color:rgba(229,231,235,0.6);transition-timing-function:cubic-bezier(0.76,0,0.23,1)">
+      <button onclick="toggleFAQ(${i})" class="w-full text-left px-5 py-4 flex items-center justify-between gap-4">
+        <span class="text-[14px] font-bold text-[#0A0A0A] leading-snug">${faq.q}</span>
+        <span class="faq-chevron inline-flex items-center justify-center w-7 h-7 rounded-full shrink-0 transition-all duration-400" style="background:#E8FCE9;color:#0A6B13">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </span>
+      </button>
+      <div class="faq-answer">
+        <div class="px-5 pb-5 text-[13px] text-[#6B7280] leading-relaxed">${faq.a}</div>
+      </div>
+    </div>
+  `).join('');
+  // open first by default
+  setTimeout(() => toggleFAQ(0), 100);
+}
+
+function toggleFAQ(i) {
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach((item, idx) => {
+    if (idx === i) {
+      item.classList.toggle('open');
+      const chevron = item.querySelector('.faq-chevron');
+      if (item.classList.contains('open')) {
+        chevron.style.background = '#18C729';
+        chevron.style.color = 'white';
+      } else {
+        chevron.style.background = '#E8FCE9';
+        chevron.style.color = '#0A6B13';
+      }
+    } else {
+      item.classList.remove('open');
+      const chevron = item.querySelector('.faq-chevron');
+      chevron.style.background = '#E8FCE9';
+      chevron.style.color = '#0A6B13';
+    }
+  });
+}
+
+// ===== Render Final CTA grid =====
+function renderFinalCTA() {
+  const grid = document.getElementById('finalCtaGrid');
+  grid.innerHTML = PRODUCTS.map((p, i) => `
+    <a href="${p.paymentUrl}" target="_blank" rel="noopener noreferrer" class="group relative p-4 rounded-3xl transition-all duration-400 text-left" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);transition-timing-function:cubic-bezier(0.76,0,0.23,1)">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xl leading-none">${p.emoji}</span>
+        <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#18C729">${p.badge}</span>
+      </div>
+      <div class="text-[13px] font-bold text-white leading-tight">${p.title}</div>
+      <div class="mt-1 flex items-center justify-between">
+        <span class="font-black text-lg" style="color:#18C729">${p.currency}${p.price}</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:text-white group-hover:translate-x-1 transition-all"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </div>
+    </a>
+  `).join('');
+}
+
+// ===== Video Modal =====
+function openVideoModal(productIndex) {
+  const p = PRODUCTS[productIndex];
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalBody').innerHTML = `
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex-1">
+        <div class="text-[11px] font-semibold uppercase tracking-wide" style="color:#0A6B13">${p.categoryLabel}</div>
+        <div class="mt-0.5 text-[15px] font-bold text-[#0A0A0A] leading-snug">${p.tagline}</div>
+      </div>
+      <div class="text-right">
+        <div class="text-[10px] text-[#6B7280] line-through">${p.estimatedValue}</div>
+        <div class="text-[20px] font-black text-[#0A0A0A] leading-none">${p.currency}${p.price}</div>
+      </div>
+    </div>
+    <ul class="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5">
+      ${p.features.slice(0,6).map(f => `<li class="flex items-start gap-1.5 text-[11.5px] text-[#0A0A0A]"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#18C729" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 shrink-0"><polyline points="20 6 9 17 4 12"/></svg><span class="leading-snug">${f}</span></li>`).join('')}
+    </ul>
+    <a href="${p.paymentUrl}" target="_blank" rel="noopener noreferrer" class="btn-press shimmer-on-hover mt-4 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl text-white font-bold shadow-brand-lg hover:shadow-brand-xl transition-shadow" style="background:#18C729">
+      Buy Now · ${p.currency}${p.price}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+    <p class="mt-2 text-center text-[10.5px] text-[#6B7280]">Secure checkout · Instant PDF download · No refunds on digital products</p>
+  `;
+
+  const video = document.getElementById('modalVideo');
+  video.src = PRODUCT_VIDEO_URL;
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+
+  document.getElementById('videoModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  setTimeout(() => {
+    video.play().catch(() => {
+      setTimeout(() => video.play().catch(() => {}), 250);
+    });
+  }, 200);
+}
+
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => {
+    const video = document.getElementById('modalVideo');
+    video.pause();
+    video.src = '';
+  }, 300);
+}
+
+// ===== HERO DECK AUTOMATIC 3D SHUFFLE (TASH KE PATTE) =====
+const HERO_DECK_ITEMS = [
+  { emoji: "🏬", badge: "Best Seller", title: "100 USA Malls", price: "PDF · ₹199", tagPrice: "₹199" },
+  { emoji: "🏭", badge: "Top Value", title: "100 USA Manufacturers", price: "PDF · ₹199", tagPrice: "₹199" },
+  { emoji: "🏨", badge: "Premium Pick", title: "100 USA Hotels", price: "PDF · ₹199", tagPrice: "₹199" }
+];
+
+let heroIndex = 0;
+
+function rotateHeroDeck() {
+  heroIndex = (heroIndex + 1) % HERO_DECK_ITEMS.length;
+  const frontData = HERO_DECK_ITEMS[heroIndex];
+  const rightData = HERO_DECK_ITEMS[(heroIndex + 1) % HERO_DECK_ITEMS.length];
+  const leftData = HERO_DECK_ITEMS[(heroIndex + 2) % HERO_DECK_ITEMS.length];
+
+  const frontCard = document.getElementById('heroCardFront');
+  const rightCard = document.getElementById('heroCardRight');
+  const leftCard = document.getElementById('heroCardLeft');
+
+  if (frontCard && rightCard && leftCard) {
+    frontCard.style.opacity = '0.3';
+    frontCard.style.transform = 'scale(0.85) translateY(12px)';
+
+    setTimeout(() => {
+      frontCard.innerHTML = `
+        <div class="relative w-44 h-44 sm:w-52 sm:h-52 rounded-3xl bg-white shadow-2xl overflow-hidden">
+          <div class="absolute top-0 inset-x-0 h-1.5" style="background:linear-gradient(to right,#18C729,#0F9D1C,#0A6B13)"></div>
+          <div class="absolute -top-10 -right-10 w-32 h-32 blur-2xl rounded-full" style="background:rgba(24,199,41,0.3)"></div>
+          <div class="relative h-full flex flex-col items-center justify-center p-5">
+            <div class="emoji-pulse text-6xl sm:text-7xl">${frontData.emoji}</div>
+            <div class="mt-3 text-[10px] font-bold uppercase tracking-wider" style="color:#0A6B13">${frontData.badge}</div>
+            <div class="mt-1 text-[14px] font-black text-[#0A0A0A] leading-tight text-center">${frontData.title}</div>
+            <div class="mt-2 inline-flex items-center gap-1 px-2.5 py-1 rounded-full" style="background:#E8FCE9">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span class="text-[10px] font-bold" style="color:#0A6B13">${frontData.price}</span>
+            </div>
+          </div>
+          <div class="absolute bottom-0 inset-x-0 h-12" style="background:linear-gradient(to top,rgba(232,252,233,0.6),transparent)"></div>
+        </div>
+        <div class="absolute -top-3 -right-3 px-3 py-1.5 rounded-full text-white text-[11px] font-black shadow-xl" style="background:#0A0A0A">${frontData.tagPrice}</div>
+        <div class="absolute -bottom-3 -left-3 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-white text-[#0A0A0A] text-[10px] font-bold shadow-xl">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A6B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+          Verified
+        </div>
+      `;
+
+      rightCard.innerHTML = `
+        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl shadow-xl overflow-hidden border" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border-color:rgba(255,255,255,0.5)">
+          <div class="h-full flex flex-col items-center justify-center p-4">
+            <div class="text-4xl sm:text-5xl opacity-90">${rightData.emoji}</div>
+            <div class="mt-2 text-[10px] font-bold uppercase tracking-wider" style="color:rgba(10,10,10,0.6)">${rightData.title.replace('100 USA ', '')}</div>
+            <div class="mt-1 text-[12px] font-bold text-[#0A0A0A]">100 Records</div>
+          </div>
+        </div>
+      `;
+
+      leftCard.innerHTML = `
+        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-3xl shadow-xl overflow-hidden border" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border-color:rgba(255,255,255,0.5)">
+          <div class="h-full flex flex-col items-center justify-center p-4">
+            <div class="text-4xl sm:text-5xl opacity-90">${leftData.emoji}</div>
+            <div class="mt-2 text-[10px] font-bold uppercase tracking-wider" style="color:rgba(10,10,10,0.6)">${leftData.title.replace('100 USA ', '')}</div>
+            <div class="mt-1 text-[12px] font-bold text-[#0A0A0A]">100 Records</div>
+          </div>
+        </div>
+      `;
+
+      frontCard.style.opacity = '1';
+      frontCard.style.transform = 'scale(1) translateY(0)';
+    }, 250);
+  }
+}
+
+setInterval(rotateHeroDeck, 2800);
+
+// ===== Sales Notifications =====
+let toastIdx = -1;
+let toastTimer;
+
+function showSalesToast() {
+  let idx;
+  do {
+    idx = Math.floor(Math.random() * SALES_EVENTS.length);
+  } while (idx === toastIdx && SALES_EVENTS.length > 1);
+  toastIdx = idx;
+  const e = SALES_EVENTS[idx];
+
+  document.getElementById('toastMain').innerHTML = `<span class="font-bold">${e.name}</span> from <span class="font-semibold">${e.city}</span> just bought`;
+  document.getElementById('toastProduct').textContent = `${e.product} Data`;
+  document.getElementById('toastTime').textContent = `${e.minutesAgo} min ago · Verified`;
+
+  const toast = document.getElementById('salesToast');
+  toast.classList.add('show');
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(showSalesToast, 2200);
+  }, 5500);
+}
+
+// ===== Header scroll effect =====
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  if (window.scrollY > 8) {
+    header.classList.add('glass-premium');
+    header.style.boxShadow = '0 8px 24px -12px rgba(10,10,10,0.12)';
+  } else {
+    header.classList.remove('glass-premium');
+    header.style.boxShadow = '';
+  }
+});
+
+// ===== Mobile drawer =====
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawerBackdrop').classList.add('open');
+});
+document.getElementById('closeDrawer').addEventListener('click', closeDrawer);
+document.getElementById('drawerBackdrop').addEventListener('click', closeDrawer);
+document.querySelectorAll('.drawer-link').forEach(link => {
+  link.addEventListener('click', closeDrawer);
+});
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawerBackdrop').classList.remove('open');
+}
+
+// ===== Modal close =====
+document.getElementById('modalClose').addEventListener('click', closeVideoModal);
+document.getElementById('videoModal').addEventListener('click', (e) => {
+  if (e.target.id === 'videoModal') closeVideoModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeVideoModal();
+    closeDrawer();
+  }
+});
+
+// ===== Toast close =====
+document.getElementById('toastClose').addEventListener('click', () => {
+  document.getElementById('salesToast').classList.remove('show');
+  clearTimeout(toastTimer);
+  setTimeout(showSalesToast, 2200);
+});
+
+// ===== IntersectionObserver for reveal animations =====
+function setupReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ===== Counter animation =====
+function animateCounters() {
+  const counters = document.querySelectorAll('[data-counter]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.counter);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const duration = 1600;
+        const start = performance.now();
+        const animate = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.round(target * eased);
+          el.textContent = `${prefix}${value}${suffix}`;
+          if (progress < 1) requestAnimationFrame(animate);
+        };
+        requestAnimationFrame(animate);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => observer.observe(c));
+}
+
+// ===== Init =====
+document.getElementById('year').textContent = new Date().getFullYear();
+renderProducts();
+renderFeatures();
+renderTestimonials();
+renderFAQ();
+renderFinalCTA();
+setupReveal();
+animateCounters();
+setTimeout(showSalesToast, 3000);
+</script>
+
+</body>
+</html>
